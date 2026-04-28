@@ -54,7 +54,7 @@
 
 <h1>수명 시계 · LIFE CLOCK</h1>
 <p class="subtitle">개인정보 처리방침 (Privacy Policy)</p>
-<p>시행일: 2026년 4월 21일</p>
+<p>시행일: 2026년 5월 1일</p>
 
 <h2>1. 개인정보의 수집 항목</h2>
 <p>본 앱은 수명 예측 분석을 위해 다음 정보를 수집합니다.</p>
@@ -68,6 +68,12 @@
   <li>가족 정보: 부모 생존 여부 및 연세, 가족 유전 병력</li>
   <li>혈압, 혈당 (선택 — 프리미엄 정밀 분석용)</li>
 </ul>
+<p><span class="highlight">결제 정보 (프리미엄 구독 / 인앱 결제 시):</span></p>
+<ul>
+  <li>인앱 결제는 Apple App Store가 직접 처리하며, 본 앱은 신용카드 정보 등 결제 수단 정보를 수집하지 않습니다.</li>
+  <li>구독 검증을 위해 사용자 익명 ID, 영수증, 구독 상태가 RevenueCat 서버로 전송됩니다.</li>
+  <li>전자상거래법 대응을 위한 결제 로그가 기기 내 AsyncStorage에 5년간 저장됩니다.</li>
+</ul>
 
 <h2>2. 개인정보의 수집 및 이용 목적</h2>
 <p>수집된 정보는 <span class="highlight">오직 수명 예측 분석 서비스 제공</span>을 위해서만 사용됩니다.</p>
@@ -76,55 +82,85 @@
   <li>사주·성명학 해석 분석 (프리미엄)</li>
   <li>몬테카를로 시뮬레이션 (프리미엄)</li>
   <li>체크인 건강 추이 분석</li>
+  <li>인앱 구독 검증 및 결제 이력 관리</li>
 </ul>
 
 <h2>3. 개인정보의 저장 및 처리 방식</h2>
 <p><span class="highlight">입력된 모든 데이터는 사용자의 기기 내에서만 저장 및 처리됩니다.</span></p>
 <ul>
-  <li>외부 서버로 전송하지 않습니다.</li>
+  <li>분석용 개인정보는 외부 서버로 전송하지 않습니다.</li>
   <li>AsyncStorage(기기 내 로컬 저장소)를 사용합니다.</li>
   <li>앱 삭제 시 모든 데이터가 자동으로 삭제됩니다.</li>
   <li>클라우드 백업 또는 동기화 기능은 제공하지 않습니다.</li>
+  <li>예외: 결제 검증 정보(영수증, 익명 ID)는 RevenueCat 서버로 전송되며, AI 해설 사용 시 익명화된 분석 수치만 Anthropic Claude API로 전송됩니다 (제4조 참조).</li>
 </ul>
 
 <h2>4. 제3자 서비스 이용</h2>
-<p>본 앱은 사용자의 개인정보를 <span class="highlight">기본적으로 제3자에게 제공하지 않습니다.</span></p>
-<p>단, 프리미엄 AI 해설 기능 사용 시 사용자가 명시적으로 요청한 경우에 한해 분석 결과가 Anthropic Claude API로 전송되어 해설이 생성됩니다.</p>
+<p>본 앱은 사용자의 개인정보를 <span class="highlight">기본적으로 제3자에게 제공하지 않습니다.</span> 단, 다음 서비스 운영을 위해 제한적으로 위탁 처리됩니다.</p>
+
+<p><span class="highlight">(1) Anthropic Claude API (AI 해설 생성)</span></p>
 <ul>
+  <li>전송 시점: 사용자가 프리미엄 AI 해설 기능을 명시적으로 요청한 경우에 한함</li>
   <li>전송 데이터: 익명화된 분석 결과 수치만 (개인 식별 정보 미포함)</li>
   <li>전송 처리: HTTPS 암호화 통신</li>
   <li>제3자 정책: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
   <li>사용 제한: 본인 분석 월 10회, 가족 월 3회, 친구 월 2회</li>
 </ul>
 
+<p><span class="highlight">(2) RevenueCat (인앱 구독 관리)</span></p>
+<ul>
+  <li>전송 시점: 사용자가 인앱 결제 또는 구독 상태 확인을 요청한 경우</li>
+  <li>전송 데이터: 사용자 익명 ID, Apple App Store 영수증, 구독 상태</li>
+  <li>목적: 인앱 구독 검증, 구독 상태 관리, 환불 처리 지원</li>
+  <li>전송 처리: HTTPS 암호화 통신</li>
+  <li>제3자 정책: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(3) Apple App Store (인앱 결제 처리)</span></p>
+<ul>
+  <li>인앱 결제 정보(신용카드, Apple ID 등)는 Apple이 직접 처리하며, 본 앱은 결제 수단 정보를 수집·저장하지 않습니다.</li>
+  <li>제3자 정책: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+</ul>
+
 <h2>5. 개인정보의 보유 및 파기</h2>
 <ul>
-  <li>데이터는 사용자가 앱을 삭제하는 즉시 자동 파기됩니다.</li>
+  <li>분석용 데이터는 사용자가 앱을 삭제하는 즉시 자동 파기됩니다.</li>
   <li>앱 내에서 데이터 초기화(재입력) 시 기존 데이터는 새 데이터로 대체됩니다.</li>
-  <li>별도의 보유 기간은 없으며, 서버에 저장되지 않으므로 원격 파기 대상이 아닙니다.</li>
+  <li>결제 로그는 전자상거래법에 따라 기기 내 AsyncStorage에 5년간 보관됩니다 (앱 삭제 시 함께 삭제).</li>
+  <li>RevenueCat 서버에 저장된 구독 정보는 RevenueCat의 보유 정책에 따릅니다.</li>
+  <li>본 앱은 별도의 자체 서버를 운영하지 않으므로 원격 파기 대상이 아닙니다.</li>
 </ul>
 
 <h2>6. 이용자의 권리</h2>
 <ul>
-  <li>사용자는 언제든지 앱을 삭제하여 모든 데이터를 파기할 수 있습니다.</li>
+  <li>사용자는 언제든지 앱을 삭제하여 모든 분석 데이터를 파기할 수 있습니다.</li>
   <li>재입력 기능을 통해 기존 분석 결과를 새로운 데이터로 교체할 수 있습니다.</li>
+  <li>구독 해지 및 환불은 Apple App Store의 구독 관리 페이지에서 직접 진행할 수 있습니다.</li>
 </ul>
 
-<h2>7. 아동의 개인정보 보호</h2>
+<h2>7. 결제 및 환불 안내</h2>
+<ul>
+  <li>본 앱의 모든 인앱 결제는 Apple App Store를 통해 처리됩니다.</li>
+  <li>구독 해지: iOS 설정 > Apple ID > 구독에서 직접 해지 가능합니다.</li>
+  <li>환불: Apple의 환불 정책에 따라 <a href="https://reportaproblem.apple.com" target="_blank">Apple 환불 신청 페이지</a>에서 신청할 수 있습니다.</li>
+  <li>본 앱(Studio JS)은 직접 환불을 처리하지 않으며, 결제 관련 분쟁은 Apple 정책에 따릅니다.</li>
+</ul>
+
+<h2>8. 아동의 개인정보 보호</h2>
 <p>본 앱은 만 14세 미만의 이용을 제한하며, 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 연령 등급은 9+로 설정되어 있습니다.</p>
 
-<h2>8. 개인정보 보호책임자</h2>
+<h2>9. 개인정보 보호책임자</h2>
 <ul>
   <li>상호: Studio JS</li>
   <li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
-<h2>9. 개인정보 처리방침 변경</h2>
-<p>본 방침이 변경될 경우, 앱 내 공지 또는 본 페이지를 통해 사전 고지합니다.</p>
+<h2>10. 개인정보 처리방침 변경</h2>
+<p>본 방침이 변경될 경우, 앱 내 공지 또는 본 페이지를 통해 사전 고지합니다. 중요한 변경 사항은 시행일 7일 전, 그 외 변경은 시행일 당일 고지합니다.</p>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>최종 수정일: 2026년 4월 21일</p>
+  <p>최종 수정일: 2026년 5월 1일</p>
 </div>
 
 </div>
@@ -134,7 +170,7 @@
 
 <h1>LIFE CLOCK · 수명 시계</h1>
 <p class="subtitle">Privacy Policy</p>
-<p>Effective Date: April 21, 2026</p>
+<p>Effective Date: May 1, 2026</p>
 
 <h2>1. Information We Collect</h2>
 <p>This app collects the following information for lifespan prediction analysis:</p>
@@ -148,6 +184,12 @@
   <li>Family information: parents' survival status and age, hereditary medical history</li>
   <li>Blood pressure, blood sugar (optional — for Premium analysis)</li>
 </ul>
+<p><span class="highlight">Payment Information (for Premium subscriptions / in-app purchases):</span></p>
+<ul>
+  <li>In-app purchases are processed directly by the Apple App Store. This app does not collect credit card or other payment method information.</li>
+  <li>For subscription verification, an anonymous user ID, receipt, and subscription status are transmitted to RevenueCat servers.</li>
+  <li>Payment logs are stored on-device in AsyncStorage for 5 years in compliance with the Korean Electronic Commerce Act.</li>
+</ul>
 
 <h2>2. Purpose of Collection and Use</h2>
 <p>Collected information is used <span class="highlight">solely for providing lifespan prediction services</span>:</p>
@@ -156,55 +198,85 @@
   <li>Saju and name analysis interpretation (Premium)</li>
   <li>Monte Carlo simulation (Premium)</li>
   <li>Check-in health trend analysis</li>
+  <li>In-app subscription verification and payment history management</li>
 </ul>
 
 <h2>3. Storage and Processing</h2>
-<p><span class="highlight">All entered data is stored and processed only on the user's device.</span></p>
+<p><span class="highlight">All entered analysis data is stored and processed only on the user's device.</span></p>
 <ul>
-  <li>Data is not transmitted to external servers.</li>
+  <li>Personal analysis data is not transmitted to external servers.</li>
   <li>AsyncStorage (on-device local storage) is used.</li>
   <li>All data is automatically deleted when the app is uninstalled.</li>
   <li>No cloud backup or synchronization features are provided.</li>
+  <li>Exception: Payment verification data (receipts, anonymous ID) is transmitted to RevenueCat servers, and when using AI Insight, only anonymized analysis values are sent to Anthropic Claude API (see Section 4).</li>
 </ul>
 
 <h2>4. Third-Party Services</h2>
-<p>This app <span class="highlight">does not provide users' personal information to third parties by default.</span></p>
-<p>However, when using the Premium AI Insight feature, upon explicit user request, analysis results are sent to Anthropic Claude API to generate explanations.</p>
+<p>This app <span class="highlight">does not provide users' personal information to third parties by default.</span> However, the following services are used on a limited basis for app operation.</p>
+
+<p><span class="highlight">(1) Anthropic Claude API (AI Insight Generation)</span></p>
 <ul>
+  <li>When transmitted: Only when the user explicitly requests the Premium AI Insight feature</li>
   <li>Data transmitted: Anonymized analysis result values only (no personally identifiable information)</li>
   <li>Transmission: HTTPS-encrypted communication</li>
   <li>Third-party policy: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
   <li>Usage limits: Self analysis 10 times/month, family 3 times/month, friend 2 times/month</li>
 </ul>
 
+<p><span class="highlight">(2) RevenueCat (In-App Subscription Management)</span></p>
+<ul>
+  <li>When transmitted: When the user makes an in-app purchase or requests subscription status verification</li>
+  <li>Data transmitted: Anonymous user ID, Apple App Store receipt, subscription status</li>
+  <li>Purpose: In-app subscription verification, subscription status management, refund processing support</li>
+  <li>Transmission: HTTPS-encrypted communication</li>
+  <li>Third-party policy: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(3) Apple App Store (In-App Payment Processing)</span></p>
+<ul>
+  <li>In-app payment information (credit cards, Apple ID, etc.) is processed directly by Apple. This app does not collect or store payment method information.</li>
+  <li>Third-party policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+</ul>
+
 <h2>5. Data Retention and Deletion</h2>
 <ul>
-  <li>Data is automatically deleted immediately upon app uninstallation.</li>
+  <li>Analysis data is automatically deleted immediately upon app uninstallation.</li>
   <li>When data is reset within the app (re-entry), existing data is replaced with new data.</li>
-  <li>No separate retention period applies, and as data is not stored on servers, remote deletion does not apply.</li>
+  <li>Payment logs are retained on-device in AsyncStorage for 5 years in compliance with the Korean Electronic Commerce Act (deleted upon app uninstallation).</li>
+  <li>Subscription information stored on RevenueCat servers follows RevenueCat's retention policy.</li>
+  <li>This app does not operate its own servers, so remote deletion does not apply.</li>
 </ul>
 
 <h2>6. User Rights</h2>
 <ul>
-  <li>Users can delete all data at any time by uninstalling the app.</li>
+  <li>Users can delete all analysis data at any time by uninstalling the app.</li>
   <li>Users can replace existing analysis results with new data through the re-entry feature.</li>
+  <li>Subscription cancellation and refund requests can be made directly through the Apple App Store subscription management page.</li>
 </ul>
 
-<h2>7. Children's Privacy</h2>
+<h2>7. Payment and Refund Information</h2>
+<ul>
+  <li>All in-app purchases in this app are processed through the Apple App Store.</li>
+  <li>Subscription cancellation: Available in iOS Settings > Apple ID > Subscriptions.</li>
+  <li>Refunds: Can be requested through <a href="https://reportaproblem.apple.com" target="_blank">Apple's refund request page</a> in accordance with Apple's refund policy.</li>
+  <li>Studio JS does not directly process refunds. Payment-related disputes follow Apple's policy.</li>
+</ul>
+
+<h2>8. Children's Privacy</h2>
 <p>This app restricts use by children under the age of 14 and does not intentionally collect personal information from children under 14. The age rating is set to 9+.</p>
 
-<h2>8. Privacy Officer</h2>
+<h2>9. Privacy Officer</h2>
 <ul>
   <li>Company: Studio JS</li>
   <li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
-<h2>9. Changes to This Privacy Policy</h2>
-<p>If this policy is changed, we will notify you in advance through in-app announcements or this page.</p>
+<h2>10. Changes to This Privacy Policy</h2>
+<p>If this policy is changed, we will notify you in advance through in-app announcements or this page. Significant changes will be announced 7 days before the effective date; other changes will be announced on the effective date.</p>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>Last updated: April 21, 2026</p>
+  <p>Last updated: May 1, 2026</p>
 </div>
 
 </div>
@@ -214,7 +286,7 @@
 
 <h1>寿命時計 · LIFE CLOCK</h1>
 <p class="subtitle">プライバシーポリシー</p>
-<p>施行日: 2026年4月21日</p>
+<p>施行日: 2026年5月1日</p>
 
 <h2>1. 収集する個人情報</h2>
 <p>本アプリは寿命予測分析のため、以下の情報を収集します。</p>
@@ -228,6 +300,12 @@
   <li>家族情報: 両親の生存状況・年齢、家族の遺伝病歴</li>
   <li>血圧、血糖値(任意 — プレミアム精密分析用)</li>
 </ul>
+<p><span class="highlight">決済情報(プレミアム購読・アプリ内課金時):</span></p>
+<ul>
+  <li>アプリ内課金はApple App Storeが直接処理し、本アプリはクレジットカード情報など決済手段情報を収集しません。</li>
+  <li>購読検証のため、ユーザー匿名ID、レシート、購読状態がRevenueCatサーバーに送信されます。</li>
+  <li>韓国電子商取引法対応のため、決済ログがデバイス内のAsyncStorageに5年間保存されます。</li>
+</ul>
 
 <h2>2. 個人情報の収集および利用目的</h2>
 <p>収集された情報は<span class="highlight">寿命予測分析サービスの提供のみ</span>に使用されます。</p>
@@ -236,55 +314,85 @@
   <li>四柱推命・姓名学解釈分析(プレミアム)</li>
   <li>モンテカルロシミュレーション(プレミアム)</li>
   <li>チェックイン健康傾向分析</li>
+  <li>アプリ内購読の検証および決済履歴の管理</li>
 </ul>
 
 <h2>3. 個人情報の保存および処理方法</h2>
-<p><span class="highlight">入力されたすべてのデータはユーザーのデバイス内でのみ保存・処理されます。</span></p>
+<p><span class="highlight">入力されたすべての分析データはユーザーのデバイス内でのみ保存・処理されます。</span></p>
 <ul>
-  <li>外部サーバーへの送信は行いません。</li>
+  <li>分析用個人情報は外部サーバーへ送信しません。</li>
   <li>AsyncStorage(デバイス内ローカルストレージ)を使用します。</li>
   <li>アプリ削除時にすべてのデータが自動的に削除されます。</li>
   <li>クラウドバックアップや同期機能は提供しません。</li>
+  <li>例外: 決済検証情報(レシート、匿名ID)はRevenueCatサーバーへ送信され、AI解説利用時は匿名化された分析数値のみAnthropic Claude APIへ送信されます(第4条参照)。</li>
 </ul>
 
 <h2>4. 第三者サービスの利用</h2>
-<p>本アプリはユーザーの個人情報を<span class="highlight">原則として第三者に提供しません。</span></p>
-<p>ただし、プレミアムAI解説機能の利用時、ユーザーが明示的に要請した場合に限り、分析結果がAnthropic Claude APIに送信され、解説が生成されます。</p>
+<p>本アプリはユーザーの個人情報を<span class="highlight">原則として第三者に提供しません。</span>ただし、以下のサービス運営のため限定的に委託処理されます。</p>
+
+<p><span class="highlight">(1) Anthropic Claude API (AI解説生成)</span></p>
 <ul>
+  <li>送信時点: ユーザーがプレミアムAI解説機能を明示的に要請した場合のみ</li>
   <li>送信データ: 匿名化された分析結果の数値のみ(個人識別情報を含まない)</li>
   <li>送信処理: HTTPS暗号化通信</li>
   <li>第三者ポリシー: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
   <li>使用制限: 本人分析 月10回、家族 月3回、友人 月2回</li>
 </ul>
 
+<p><span class="highlight">(2) RevenueCat (アプリ内購読管理)</span></p>
+<ul>
+  <li>送信時点: ユーザーがアプリ内課金または購読状態の確認を要請した場合</li>
+  <li>送信データ: ユーザー匿名ID、Apple App Storeレシート、購読状態</li>
+  <li>目的: アプリ内購読の検証、購読状態の管理、返金処理サポート</li>
+  <li>送信処理: HTTPS暗号化通信</li>
+  <li>第三者ポリシー: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(3) Apple App Store (アプリ内決済処理)</span></p>
+<ul>
+  <li>アプリ内決済情報(クレジットカード、Apple IDなど)はAppleが直接処理し、本アプリは決済手段情報を収集・保存しません。</li>
+  <li>第三者ポリシー: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+</ul>
+
 <h2>5. 個人情報の保有および破棄</h2>
 <ul>
-  <li>データはユーザーがアプリを削除すると同時に自動的に破棄されます。</li>
+  <li>分析用データはユーザーがアプリを削除すると同時に自動的に破棄されます。</li>
   <li>アプリ内でデータ初期化(再入力)時、既存データは新規データに置き換えられます。</li>
-  <li>別途の保有期間はなく、サーバーに保存されないため、遠隔破棄の対象外です。</li>
+  <li>決済ログは韓国電子商取引法に基づき、デバイス内AsyncStorageに5年間保管されます(アプリ削除時に共に削除)。</li>
+  <li>RevenueCatサーバーに保存された購読情報はRevenueCatの保有ポリシーに従います。</li>
+  <li>本アプリは独自サーバーを運営していないため、遠隔破棄の対象外です。</li>
 </ul>
 
 <h2>6. 利用者の権利</h2>
 <ul>
-  <li>ユーザーはいつでもアプリを削除することによりすべてのデータを破棄できます。</li>
+  <li>ユーザーはいつでもアプリを削除することにより、すべての分析データを破棄できます。</li>
   <li>再入力機能を通じて、既存の分析結果を新しいデータに置き換えることができます。</li>
+  <li>購読の解約および返金は、Apple App Storeの購読管理ページから直接実施できます。</li>
 </ul>
 
-<h2>7. 児童の個人情報保護</h2>
+<h2>7. 決済および返金案内</h2>
+<ul>
+  <li>本アプリのすべてのアプリ内課金はApple App Storeを通じて処理されます。</li>
+  <li>購読解約: iOS設定 > Apple ID > 購読から直接解約可能です。</li>
+  <li>返金: Appleの返金ポリシーに基づき、<a href="https://reportaproblem.apple.com" target="_blank">Apple返金申請ページ</a>から申請できます。</li>
+  <li>本アプリ(Studio JS)は直接返金処理を行いません。決済関連の紛争はAppleのポリシーに従います。</li>
+</ul>
+
+<h2>8. 児童の個人情報保護</h2>
 <p>本アプリは満14歳未満の利用を制限しており、満14歳未満の児童の個人情報を意図的に収集しません。年齢制限は9+に設定されています。</p>
 
-<h2>8. 個人情報保護責任者</h2>
+<h2>9. 個人情報保護責任者</h2>
 <ul>
   <li>商号: Studio JS</li>
   <li>メール: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
-<h2>9. プライバシーポリシーの変更</h2>
-<p>本ポリシーが変更される場合、アプリ内のお知らせまたは本ページを通じて事前に告知します。</p>
+<h2>10. プライバシーポリシーの変更</h2>
+<p>本ポリシーが変更される場合、アプリ内のお知らせまたは本ページを通じて事前に告知します。重要な変更は施行日の7日前、その他の変更は施行日当日に告知します。</p>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>最終更新日: 2026年4月21日</p>
+  <p>最終更新日: 2026年5月1日</p>
 </div>
 
 </div>
