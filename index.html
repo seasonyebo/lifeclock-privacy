@@ -54,7 +54,7 @@
 
 <h1>수명 시계 · LIFE CLOCK</h1>
 <p class="subtitle">개인정보 처리방침 (Privacy Policy)</p>
-<p>시행일: 2026년 5월 26일</p>
+<p>시행일: 2026년 6월 20일</p>
 
 <h2>1. 개인정보의 수집 항목</h2>
 <p>본 앱은 수명 예측 분석을 위해 다음 정보를 수집합니다.</p>
@@ -93,7 +93,7 @@
   <li>앱 삭제 시 모든 데이터가 자동으로 삭제됩니다.</li>
   <li>구독 만료 시에도 입력 데이터는 기기 내에 보관되며, 재구독 시 그대로 복원됩니다 (만료는 기능 잠금일 뿐 데이터 삭제가 아닙니다).</li>
   <li>클라우드 백업 또는 동기화 기능은 제공하지 않습니다.</li>
-  <li>예외: 결제 검증 정보(영수증, 익명 ID)는 RevenueCat 서버로 전송되며, AI 해설 사용 시 익명화된 분석 수치만 Anthropic Claude API로 전송됩니다 (제4조 참조).</li>
+  <li>예외: 결제 검증 정보(영수증, 익명 ID)는 RevenueCat 서버로 전송되며, AI 해설 사용 시 익명화된 분석 수치만 Cloudflare Workers 프록시(미국)를 경유해 Anthropic Claude API로 전송됩니다 (제4조 참조).</li>
   <li>서비스 품질 개선을 위해 익명 이용 통계(이벤트 유형, 랜덤 기기 식별자)가 Amplitude Inc.(미국) 서버로 전송됩니다.</li>
   <li>앱 오류 진단을 위해 익명화된 오류 정보가 Functional Software Inc.(Sentry, 미국) 서버로 전송됩니다.</li>
   <li>위 두 서비스에 전송되는 데이터에는 이름, 생년월일, 건강 정보 등 개인 식별 정보가 포함되지 않습니다.</li>
@@ -107,8 +107,9 @@
   <li>전송 시점: 사용자가 프리미엄 AI 해설 기능을 명시적으로 요청한 경우에 한함</li>
   <li>전송 데이터: 익명화된 분석 결과 수치만 (개인 식별 정보 미포함)</li>
   <li>전송 처리: HTTPS 암호화 통신</li>
+  <li>국외 이전: 미국 (Anthropic PBC)</li>
   <li>제3자 정책: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>사용 제한: 본인 분석 월 4회, 가족 월 2회</li>
+  <li>사용 제한: 본인 월 10회, 가족 월 3회, 친구 월 2회</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (인앱 구독 관리)</span></p>
@@ -117,6 +118,7 @@
   <li>전송 데이터: 사용자 익명 ID, Apple App Store 영수증, 구독 상태</li>
   <li>목적: 인앱 구독 검증, 구독 상태 관리, 환불 처리 지원</li>
   <li>전송 처리: HTTPS 암호화 통신</li>
+  <li>국외 이전: 미국 (RevenueCat, Inc.)</li>
   <li>제3자 정책: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
@@ -142,6 +144,16 @@
   <li>목적: 오류 진단 및 서비스 안정성 개선</li>
   <li>국외 이전: 미국 (Functional Software Inc.)</li>
   <li>제3자 정책: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(6) Cloudflare Workers (AI 해설 중계 프록시)</span></p>
+<ul>
+  <li>전송 시점: 사용자가 프리미엄 AI 해설 기능을 요청한 경우</li>
+  <li>역할: AI 해설 요청을 Anthropic Claude API로 안전하게 중계(API 키 서버 보호)하고, 구독 상태를 서버에서 검증</li>
+  <li>저장 데이터: 익명 사용량 카운트(랜덤 식별자·월·이용 횟수)만 저장 — 분석 메시지 본문은 저장하지 않음</li>
+  <li>전송 데이터: 익명화된 분석 수치(실명·생년월일·주소 미포함)</li>
+  <li>국외 이전: 미국 (Cloudflare, Inc.)</li>
+  <li>제3자 정책: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
 
 <h2>5. 개인정보의 보유 및 파기</h2>
@@ -182,7 +194,7 @@
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>최종 수정일: 2026년 5월 26일</p>
+  <p>최종 수정일: 2026년 6월 20일</p>
 </div>
 
 </div>
@@ -192,7 +204,7 @@
 
 <h1>LIFE CLOCK · 수명 시계</h1>
 <p class="subtitle">Privacy Policy</p>
-<p>Effective Date: May 26, 2026</p>
+<p>Effective Date: June 20, 2026</p>
 
 <h2>1. Information We Collect</h2>
 <p>This app collects the following information for lifespan prediction analysis:</p>
@@ -230,7 +242,7 @@
   <li>AsyncStorage (on-device local storage) is used.</li>
   <li>All data is automatically deleted when the app is uninstalled.</li>
   <li>No cloud backup or synchronization features are provided.</li>
-  <li>Exception: Payment verification data (receipts, anonymous ID) is transmitted to RevenueCat servers, and when using AI Insight, only anonymized analysis values are sent to Anthropic Claude API (see Section 4).</li>
+  <li>Exception: Payment verification data (receipts, anonymous ID) is transmitted to RevenueCat servers, and when using AI Insight, only anonymized analysis values are sent — via a Cloudflare Workers proxy (USA) — to the Anthropic Claude API (see Section 4).</li>
   <li>Anonymous usage statistics (event types, random device identifier) are transmitted to Amplitude Inc. (USA) servers for service improvement purposes.</li>
   <li>Anonymized crash/error information is transmitted to Functional Software Inc. (Sentry, USA) servers for error diagnostics.</li>
   <li>No personally identifiable information (name, date of birth, health data) is included in data sent to these services.</li>
@@ -244,8 +256,9 @@
   <li>When transmitted: Only when the user explicitly requests the Premium AI Insight feature</li>
   <li>Data transmitted: Anonymized analysis result values only (no personally identifiable information)</li>
   <li>Transmission: HTTPS-encrypted communication</li>
+  <li>International transfer: USA (Anthropic PBC)</li>
   <li>Third-party policy: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>Usage limits: Self analysis 4 times/month, family 2 times/month</li>
+  <li>Usage limits: Self 10 times/month, family 3 times/month, friend 2 times/month</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (In-App Subscription Management)</span></p>
@@ -254,6 +267,7 @@
   <li>Data transmitted: Anonymous user ID, Apple App Store receipt, subscription status</li>
   <li>Purpose: In-app subscription verification, subscription status management, refund processing support</li>
   <li>Transmission: HTTPS-encrypted communication</li>
+  <li>International transfer: USA (RevenueCat, Inc.)</li>
   <li>Third-party policy: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
@@ -279,6 +293,16 @@
   <li>Purpose: Error diagnostics and service stability improvement</li>
   <li>International transfer: USA (Functional Software Inc.)</li>
   <li>Third-party policy: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(6) Cloudflare Workers (AI Insight Relay Proxy)</span></p>
+<ul>
+  <li>When transmitted: When the user requests the Premium AI Insight feature</li>
+  <li>Role: Securely relays AI Insight requests to the Anthropic Claude API (keeping the API key server-side) and verifies subscription status on the server</li>
+  <li>Data stored: Only anonymous usage counts (random identifier, month, usage count) — analysis message content is not stored</li>
+  <li>Data transmitted: Anonymized analysis values (no name, date of birth, or address)</li>
+  <li>International transfer: USA (Cloudflare, Inc.)</li>
+  <li>Third-party policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
 
 <h2>5. Data Retention and Deletion</h2>
@@ -319,7 +343,7 @@
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>Last updated: May 26, 2026</p>
+  <p>Last updated: June 20, 2026</p>
 </div>
 
 </div>
@@ -329,7 +353,7 @@
 
 <h1>寿命時計 · LIFE CLOCK</h1>
 <p class="subtitle">プライバシーポリシー</p>
-<p>施行日: 2026年5月26日</p>
+<p>施行日: 2026年6月20日</p>
 
 <h2>1. 収集する個人情報</h2>
 <p>本アプリは寿命予測分析のため、以下の情報を収集します。</p>
@@ -367,7 +391,7 @@
   <li>AsyncStorage(デバイス内ローカルストレージ)を使用します。</li>
   <li>アプリ削除時にすべてのデータが自動的に削除されます。</li>
   <li>クラウドバックアップや同期機能は提供しません。</li>
-  <li>例外: 決済検証情報(レシート、匿名ID)はRevenueCatサーバーへ送信され、AI解説利用時は匿名化された分析数値のみAnthropic Claude APIへ送信されます(第4条参照)。</li>
+  <li>例外: 決済検証情報(レシート、匿名ID)はRevenueCatサーバーへ送信され、AI解説利用時は匿名化された分析数値のみCloudflare Workersプロキシ(米国)を経由してAnthropic Claude APIへ送信されます(第4条参照)。</li>
   <li>サービス品質改善のため、匿名の利用統計(イベント種別、ランダム端末識別子)がAmplitude Inc.(米国)サーバーへ送信されます。</li>
   <li>アプリエラー診断のため、匿名化されたエラー情報がFunctional Software Inc.(Sentry、米国)サーバーへ送信されます。</li>
   <li>上記2サービスへの送信データには、氏名・生年月日・健康情報等の個人識別情報は含まれません。</li>
@@ -381,8 +405,9 @@
   <li>送信時点: ユーザーがプレミアムAI解説機能を明示的に要請した場合のみ</li>
   <li>送信データ: 匿名化された分析結果の数値のみ(個人識別情報を含まない)</li>
   <li>送信処理: HTTPS暗号化通信</li>
+  <li>国外移転: 米国(Anthropic PBC)</li>
   <li>第三者ポリシー: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>使用制限: 本人分析 月4回、家族 月2回</li>
+  <li>使用制限: 本人 月10回、家族 月3回、友人 月2回</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (アプリ内購読管理)</span></p>
@@ -391,6 +416,7 @@
   <li>送信データ: ユーザー匿名ID、Apple App Storeレシート、購読状態</li>
   <li>目的: アプリ内購読の検証、購読状態の管理、返金処理サポート</li>
   <li>送信処理: HTTPS暗号化通信</li>
+  <li>国外移転: 米国(RevenueCat, Inc.)</li>
   <li>第三者ポリシー: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
@@ -416,6 +442,16 @@
   <li>目的: エラー診断およびサービス安定性の改善</li>
   <li>国外移転: 米国(Functional Software Inc.)</li>
   <li>第三者ポリシー: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
+</ul>
+
+<p><span class="highlight">(6) Cloudflare Workers(AI解説中継プロキシ)</span></p>
+<ul>
+  <li>送信時点: ユーザーがプレミアムAI解説機能を要請した場合</li>
+  <li>役割: AI解説リクエストをAnthropic Claude APIへ安全に中継(APIキーをサーバー側で保護)し、購読状態をサーバーで検証</li>
+  <li>保存データ: 匿名の使用量カウント(ランダム識別子・月・利用回数)のみ保存 — 分析メッセージ本文は保存しません</li>
+  <li>送信データ: 匿名化された分析数値(氏名・生年月日・住所を含まない)</li>
+  <li>国外移転: 米国(Cloudflare, Inc.)</li>
+  <li>第三者ポリシー: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
 
 <h2>5. 個人情報の保有および破棄</h2>
@@ -456,7 +492,7 @@
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>最終更新日: 2026年5月26日</p>
+  <p>最終更新日: 2026年6月20日</p>
 </div>
 
 </div>
