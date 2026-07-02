@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수명 시계 · LIFE CLOCK — Support</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Pretendard', 'Hiragino Sans', sans-serif; background: #0a0812; color: #c8b8e0; padding: 24px; line-height: 1.8; }
+  .container { max-width: 640px; margin: 0 auto; }
+
+  /* 언어 선택 탭 */
+  .lang-tabs { display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid #2a1848; padding-bottom: 16px; }
+  .lang-tab { flex: 1; padding: 10px 12px; background: transparent; border: 1px solid #38285a; border-radius: 8px; color: #8a7898; font-size: 14px; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .lang-tab:hover { border-color: #c8a44a; color: #c8a44a; }
+  .lang-tab.active { background: rgba(200, 164, 74, 0.15); border-color: #c8a44a; color: #e8d8a0; font-weight: 600; }
+
+  /* 콘텐츠 영역 */
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  h1 { font-size: 22px; color: #e8d8c0; margin-bottom: 8px; }
+  .subtitle { font-size: 13px; color: #6a5888; margin-bottom: 24px; }
+  h2 { font-size: 17px; color: #c8a44a; margin-top: 32px; margin-bottom: 12px; border-left: 3px solid #c8a44a; padding-left: 12px; }
+  p { font-size: 15px; color: #a090c0; margin-bottom: 12px; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { font-size: 14px; color: #9080b0; margin-bottom: 6px; }
+  .highlight { color: #e8d8a0; font-weight: 600; }
+  .contact { background: rgba(200, 164, 74, 0.06); border: 1px solid #38285a; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #2a1848; font-size: 12px; color: #5a4878; }
+  a { color: #c8a44a; }
+  a:hover { color: #e8d8a0; }
+
+  @media (max-width: 480px) {
+    body { padding: 16px; }
+    h1 { font-size: 19px; }
+    h2 { font-size: 15px; }
+    p { font-size: 14px; }
+    .lang-tab { font-size: 12px; padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 언어 선택 탭 -->
+<div class="lang-tabs">
+  <button class="lang-tab active" onclick="switchLang('ko')">🇰🇷 한국어</button>
+  <button class="lang-tab" onclick="switchLang('en')">🇺🇸 English</button>
+  <button class="lang-tab" onclick="switchLang('ja')">🇯🇵 日本語</button>
+</div>
+
+<!-- ========== 한국어 ========== -->
+<div id="lang-ko" class="lang-content active">
+
+<h1>수명 시계 · LIFE CLOCK</h1>
+<p class="subtitle">고객 지원 (Support)</p>
+
+<h2>고객 지원</h2>
+<p>수명 시계(LIFE CLOCK)를 이용해 주셔서 감사합니다.<br>문의, 버그 신고, 기능 제안은 아래로 연락 주시기 바랍니다.</p>
+<div class="contact">
+  <ul style="margin-bottom:0;">
+    <li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
+    <li>개발: Studio JS</li>
+    <li>응답: 영업일 기준 1~3일 이내 회신</li>
+  </ul>
+</div>
+
+<h2>자주 묻는 질문</h2>
+<ul>
+  <li><span class="highlight">결과가 정확한가요?</span> → 본 앱은 통계 기반 추정이며 의학적 진단이 아닙니다.</li>
+  <li><span class="highlight">데이터는 어디 저장되나요?</span> → 입력 정보는 기기 내에만 저장됩니다.</li>
+  <li><span class="highlight">구독 해지는?</span> → iOS 설정 &gt; Apple ID &gt; 구독에서 가능합니다.</li>
+  <li><span class="highlight">개인정보 처리방침:</span> <a href="index.html#ko">개인정보 처리방침 보기</a></li>
+</ul>
+
+<div class="footer">
+  <p>© 2026 Studio JS. All rights reserved.</p>
+</div>
+
+</div>
+
+<!-- ========== English ========== -->
+<div id="lang-en" class="lang-content">
+
+<h1>LIFE CLOCK · 수명 시계</h1>
+<p class="subtitle">Support</p>
+
+<h2>Support</h2>
+<p>Thank you for using LIFE CLOCK.<br>For inquiries, bug reports, or feature requests, please contact us below.</p>
+<div class="contact">
+  <ul style="margin-bottom:0;">
+    <li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
+    <li>Developer: Studio JS</li>
+    <li>Response: within 1–3 business days</li>
+  </ul>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<ul>
+  <li><span class="highlight">Are the results accurate?</span> → This app provides statistical estimates and is not a medical diagnosis.</li>
+  <li><span class="highlight">Where is my data stored?</span> → Your input is stored only on your device.</li>
+  <li><span class="highlight">How do I cancel my subscription?</span> → In iOS Settings &gt; Apple ID &gt; Subscriptions.</li>
+  <li><span class="highlight">Privacy Policy:</span> <a href="index.html#en">View Privacy Policy</a></li>
+</ul>
+
+<div class="footer">
+  <p>© 2026 Studio JS. All rights reserved.</p>
+</div>
+
+</div>
+
+<!-- ========== 日本語 ========== -->
+<div id="lang-ja" class="lang-content">
+
+<h1>寿命時計 · LIFE CLOCK</h1>
+<p class="subtitle">サポート</p>
+
+<h2>サポート</h2>
+<p>LIFE CLOCK(寿命時計)をご利用いただきありがとうございます。<br>お問い合わせ、バグ報告、機能のご提案は下記までご連絡ください。</p>
+<div class="contact">
+  <ul style="margin-bottom:0;">
+    <li>メール: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
+    <li>開発: Studio JS</li>
+    <li>返信: 営業日基準1〜3日以内に返信いたします</li>
+  </ul>
+</div>
+
+<h2>よくある質問</h2>
+<ul>
+  <li><span class="highlight">結果は正確ですか?</span> → 本アプリは統計に基づく推定であり、医学的診断ではありません。</li>
+  <li><span class="highlight">データはどこに保存されますか?</span> → 入力情報はデバイス内にのみ保存されます。</li>
+  <li><span class="highlight">購読の解約は?</span> → iOS設定 &gt; Apple ID &gt; 購読から可能です。</li>
+  <li><span class="highlight">プライバシーポリシー:</span> <a href="index.html#ja">プライバシーポリシーを見る</a></li>
+</ul>
+
+<div class="footer">
+  <p>© 2026 Studio JS. All rights reserved.</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+  history.replaceState(null, '', '#' + lang);
+}
+
+// 페이지 로드 시 URL 해시로 언어 자동 선택
+window.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'en' || hash === 'ja' || hash === 'ko') {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + hash).classList.add('active');
+    document.querySelectorAll('.lang-tab').forEach(tab => {
+      if (tab.textContent.includes(hash === 'ko' ? '한국어' : hash === 'en' ? 'English' : '日本語')) {
+        tab.classList.add('active');
+      }
+    });
+    document.documentElement.lang = hash;
+  }
+});
+</script>
+
+</body>
+</html>
