@@ -54,7 +54,7 @@
 
 <h1>수명 시계 · LIFE CLOCK</h1>
 <p class="subtitle">개인정보 처리방침 (Privacy Policy)</p>
-<p>시행일: 2026년 9월 16일</p>
+<p>시행일: 2026년 10월 7일</p>
 
 <h2>1. 개인정보의 수집 항목</h2>
 <p>본 앱은 수명 예측 분석을 위해 다음 정보를 수집합니다.</p>
@@ -76,32 +76,54 @@
 <p><span class="highlight">결제 정보 (프리미엄 구독 / 인앱 결제 시):</span></p>
 <ul>
   <li>인앱 결제는 Apple App Store가 직접 처리하며, 본 앱은 신용카드 정보 등 결제 수단 정보를 수집하지 않습니다.</li>
-  <li>구독 검증을 위해 사용자 익명 ID, 영수증, 구독 상태가 RevenueCat 서버로 전송됩니다.</li>
+  <li>구독 검증을 위해 앱이 만든 무작위 사용자 ID, 영수증, 구독 상태가 RevenueCat 서버로 전송됩니다.</li>
   <li>결제 진단용 로그가 기기 내 AsyncStorage에 <strong>최근 20건까지만</strong> 저장되며, 그보다 오래된 기록은 자동으로 삭제됩니다. 전자상거래법상 거래기록 보존 의무는 판매자인 Apple과 결제 검증사(RevenueCat)가 이행합니다.</li>
+</ul>
+<p><span class="highlight">앱이 자동으로 만들거나 보내는 정보:</span></p>
+<ul>
+  <li>결제용 무작위 사용자 ID(앱을 처음 실행할 때 만듭니다)</li>
+  <li>이용 통계용 무작위 기기 식별자와 이용 이벤트 유형(앱 열기, 결과 보기 등)</li>
+  <li>앱 버전, 기기 종류, OS 버전(오류 진단용)</li>
+  <li>앱 업데이트 확인용 설치 식별자(Expo)</li>
+  <li>중계 서버의 사용량 기록(제4조 (6))</li>
 </ul>
 
 <h2>2. 개인정보의 수집 및 이용 목적</h2>
-<p>수집된 정보는 <span class="highlight">오직 수명 예측 분석 서비스 제공</span>을 위해서만 사용됩니다.</p>
+<p>수집된 정보는 <span class="highlight">아래 목적으로만</span> 사용됩니다.</p>
 <ul>
   <li>역학 기반 기대수명 계산</li>
   <li>명리 해석 분석(사주·성명학, 문화적 참고 지표) (프리미엄)</li>
   <li>몬테카를로 시뮬레이션 (프리미엄)</li>
   <li>체크인 정보 기반 예상 수명 재계산</li>
   <li>인앱 구독 검증 및 결제 이력 관리</li>
+  <li>AI 해설 생성 (프리미엄)</li>
+  <li>이용 한도 관리와 남용 방지</li>
+  <li>오류 진단</li>
+  <li>서비스 개선 (이용 통계)</li>
+  <li>앱 업데이트 제공</li>
 </ul>
 
 <h2>3. 개인정보의 저장 및 처리 방식</h2>
-<p><span class="highlight">입력된 모든 데이터는 사용자의 기기 내에서만 저장 및 처리됩니다.</span></p>
+<p><span class="highlight">입력하신 정보(이름·생년월일·건강 답변 등)는 사용자의 기기 안에 저장되며, 운영자의 서버에는 저장하지 않습니다.</span></p>
 <ul>
-  <li>분석용 개인정보는 외부 서버로 전송하지 않습니다.</li>
+  <li>기기 밖으로 나가는 것은 아래 예외와 제4조에 적은 항목뿐입니다.</li>
   <li>AsyncStorage(기기 내 로컬 저장소)를 사용합니다.</li>
-  <li>앱 삭제 시 모든 데이터가 자동으로 삭제됩니다.</li>
+  <li>앱 삭제 시 기기 안의 모든 데이터가 삭제됩니다. 앱 안에서 지우는 방법은 제6조를 참고하세요.</li>
   <li>구독 만료 시에도 입력 데이터는 기기 내에 보관되며, 재구독 시 그대로 복원됩니다 (만료는 기능 잠금일 뿐 데이터 삭제가 아닙니다).</li>
   <li>클라우드 백업 또는 동기화 기능은 제공하지 않습니다.</li>
-  <li>예외: 결제 검증 정보(영수증, 익명 ID)는 RevenueCat 서버로 전송되며, AI 해설 사용 시 익명화된 분석 수치만 Cloudflare Workers 프록시(미국)를 경유해 Anthropic Claude API로 전송됩니다 (제4조 참조).</li>
+  <li>예외: 결제 검증 정보(영수증, 무작위 사용자 ID)는 RevenueCat 서버로 전송됩니다. AI 해설을 요청하면 가명 처리된 분석 결과(예상 수명·건강 위험 요인·장기별 점수)·나이·성별·관계명(예: 아버지)이 Cloudflare Workers 중계 서버(미국)를 거쳐 Anthropic Claude API로 전송됩니다. 실명·생년월일·주소는 보내지 않습니다 (제4조 참조).</li>
+  <li>중계 서버는 AI 해설 이용 횟수 등 사용량 기록을 앱이 만든 무작위 식별자 기준으로 저장합니다. 이름·생년월일·건강 정보는 저장하지 않습니다 (제4조 (6) · 제5조 참조).</li>
   <li>서비스 품질 개선을 위해 익명 이용 통계(이벤트 유형, 랜덤 기기 식별자)가 Amplitude Inc.(미국) 서버로 전송됩니다.</li>
-  <li>앱 오류 진단을 위해 익명화된 오류 정보가 Functional Software Inc.(Sentry, 미국) 서버로 전송됩니다.</li>
-  <li>위 두 서비스에 전송되는 데이터에는 이름, 생년월일, 건강 정보 등 개인 식별 정보가 포함되지 않습니다.</li>
+  <li>앱 오류 진단을 위해 식별 정보를 지운 오류 정보가 Functional Software Inc.(Sentry, 미국) 서버로 전송됩니다.</li>
+  <li>앱 업데이트를 받기 위해 앱을 열 때 Expo(EAS Update, 미국) 서버에 새 업데이트가 있는지 확인합니다 (제4조 (7) 참조).</li>
+  <li>Amplitude·Sentry·Expo로 전송되는 데이터에는 이름, 생년월일, 건강 정보 등 개인 식별 정보가 포함되지 않습니다.</li>
+</ul>
+<p><span class="highlight">안전성 확보 조치</span></p>
+<ul>
+  <li>입력하신 정보는 운영자의 서버에 보관하지 않고 기기 안에 저장합니다.</li>
+  <li>기기 밖으로 보내는 통신은 모두 HTTPS로 암호화합니다.</li>
+  <li>AI 서비스 접속 키는 앱에 넣지 않고 중계 서버에만 둡니다.</li>
+  <li>중계 서버는 앱이 만든 무작위 식별자로만 기록하며, 요청마다 남는 접속 기록(요청 헤더·IP 주소)을 저장하지 않도록 설정했습니다.</li>
 </ul>
 
 <h2>4. 제3자 서비스 이용</h2>
@@ -110,44 +132,57 @@
 <p><span class="highlight">(1) Anthropic Claude API (AI 해설 생성)</span></p>
 <ul>
   <li>전송 시점: 사용자가 프리미엄 AI 해설 기능을 명시적으로 요청한 경우에 한함</li>
-  <li>전송 데이터: 익명화된 분석 결과 수치만 (개인 식별 정보 미포함)</li>
-  <li>전송 처리: HTTPS 암호화 통신</li>
+  <li>전송 데이터: 가명 처리된 분석 결과(예상 수명, 건강 위험 요인 이름(예: 혈압·흡연), 장기별 위험 점수 등 건강 관련 정보)와 나이·성별·관계명(예: 아버지). 실명·생년월일·주소는 보내지 않습니다.</li>
+  <li>전송 처리: HTTPS 암호화 통신 (Cloudflare Workers 중계 서버 경유)</li>
   <li>국외 이전: 미국 (Anthropic PBC)</li>
+  <li>받는 자 연락처: privacy@anthropic.com</li>
+  <li>받는 자의 보유 기간: 받은 입력과 출력을 30일 안에 자동 삭제합니다. 이용 정책 위반 검토가 필요한 경우에는 최대 2년까지 보관할 수 있습니다 (Anthropic 정책).</li>
+  <li>동의와 거부: 처음 AI 해설을 요청할 때 보내는 항목과 받는 곳을 알리고 동의를 받습니다. 동의하지 않거나 AI 해설을 요청하지 않으면 아무것도 보내지 않으며, 다른 기능은 그대로 쓸 수 있습니다.</li>
+  <li>동의 철회: 설정 → 개인정보 → 「AI 해설 전송 동의」의 「철회」를 누르면 동의 기록이 지워지고, 다음 요청 때 다시 동의를 묻습니다(「모든 데이터 삭제」로도 지워집니다). 철회한 뒤에는 새로 보내지 않습니다. 이미 보낸 내용은 위 보유 기간이 지나면 Anthropic에서 삭제됩니다.</li>
   <li>제3자 정책: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>사용 제한: 본인 월 1회, 가족은 보유한 가족 슬롯당 월 1회 (월 구독·연 구독 동일). 재입력권(정보 재입력 티켓)을 구입하면 본인 해설이 구매 1건당 1회 추가되며, 이 추가분은 월이 바뀌어도 사라지지 않습니다.</li>
+  <li>사용 제한: 본인 월 1회, 가족은 가족 1명당 월 1회 — 한 달에 해설을 받을 수 있는 가족 수는 보유한 가족 슬롯 수까지 (월 구독·연 구독 동일). 재입력권(정보 재입력 티켓)을 구입하면 본인 해설이 구매 1건당 1회 추가되며, 이 추가분은 월이 바뀌어도 사라지지 않습니다.</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (인앱 구독 관리)</span></p>
 <ul>
-  <li>전송 시점: 사용자가 인앱 결제 또는 구독 상태 확인을 요청한 경우</li>
-  <li>전송 데이터: 사용자 익명 ID, Apple App Store 영수증, 구독 상태</li>
+  <li>전송 시점: 앱을 실행할 때(구독 상태 확인)와 인앱 결제·구매 복원 시</li>
+  <li>전송 데이터: 앱이 만든 무작위 사용자 ID, Apple App Store 영수증, 구독 상태</li>
   <li>목적: 인앱 구독 검증, 구독 상태 관리, 환불 처리 지원</li>
   <li>전송 처리: HTTPS 암호화 통신</li>
   <li>국외 이전: 미국 (RevenueCat, Inc.)</li>
+  <li>받는 자 연락처: compliance@revenuecat.com</li>
+  <li>받는 자의 보유 기간: 운영자와의 계약 기간 동안 보관하며, 계약이 끝나면 RevenueCat 데이터 처리 계약에 따라 삭제합니다.</li>
+  <li>거부 방법과 효과: 앱을 실행하면 구독 상태 확인을 위해 무작위 사용자 ID가 전송됩니다. 원하지 않으면 앱을 쓰지 않아야 하며, 이 경우 구독과 구매를 이용할 수 없습니다.</li>
   <li>제3자 정책: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(3) Apple App Store (인앱 결제 처리)</span></p>
 <ul>
-  <li>인앱 결제 정보(신용카드, Apple ID 등)는 Apple이 직접 처리하며, 본 앱은 결제 수단 정보를 수집·저장하지 않습니다.</li>
+  <li>인앱 결제 정보(신용카드, Apple 계정 등)는 Apple이 직접 처리하며, 본 앱은 결제 수단 정보를 수집·저장하지 않습니다.</li>
   <li>제3자 정책: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
 </ul>
 
-<p><span class="highlight">(4) Amplitude (익명 이용 통계)</span></p>
+<p><span class="highlight">(4) Amplitude (이용 통계)</span></p>
 <ul>
   <li>전송 시점: 앱 사용 중 상시</li>
-  <li>전송 데이터: 익명 랜덤 기기 식별자, 이용 이벤트 유형 (개인 식별 정보 미포함)</li>
+  <li>전송 데이터: 무작위 기기 식별자, 이용 이벤트 유형(앱 열기 · 결과 보기 등 11가지), 결제 이벤트의 요금제 종류(월 · 연), AI 해설 요청 이벤트의 대상 종류(본인 · 가족 · 친구). 이름 · 생년월일 · 건강 정보는 포함하지 않습니다. 전송 과정에서 기기의 IP 주소가 Amplitude 서버에 전달되며, Amplitude는 이를 이용해 대략적 위치(국가 · 지역 · 도시)를 추정할 수 있습니다.</li>
   <li>목적: 서비스 개선, 기능 이용 현황 파악</li>
   <li>국외 이전: 미국 (Amplitude Inc.)</li>
+  <li>받는 자 연락처: privacy@amplitude.com</li>
+  <li>받는 자의 보유 기간: 운영자와의 계약 기간 동안 보관하며, 계약이 끝나면 Amplitude 데이터 처리 계약에 따라 삭제합니다.</li>
+  <li>거부 방법과 효과: 설정 → 개인정보 → 「이용 통계 · 오류 보고 보내기」를 끄면 그 순간부터 보내지 않으며, 다음 실행에서도 보내지 않습니다. 앱 기능은 그대로입니다.</li>
   <li>제3자 정책: <a href="https://amplitude.com/privacy" target="_blank">Amplitude Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(5) Sentry (크래시/오류 모니터링)</span></p>
 <ul>
   <li>전송 시점: 앱 오류 발생 시</li>
-  <li>전송 데이터: 익명화된 오류 메시지(개인정보 마스킹 처리), 앱 버전</li>
+  <li>전송 데이터: 오류 메시지와 예외 정보(생년월일 · 이름 형태의 글자 · 결제용 사용자 ID를 지운 것), 오류 직전의 화면 조작 · 네트워크 기록(주소 속 식별자는 지움 · 앱 로그는 보내지 않음), 앱 버전, 기기 정보(기종 · OS 버전 · 언어 · 메모리 등), Sentry가 설치마다 만드는 무작위 식별자. IP 주소와 위치는 저장하지 않도록 설정했습니다.</li>
   <li>목적: 오류 진단 및 서비스 안정성 개선</li>
   <li>국외 이전: 미국 (Functional Software Inc.)</li>
+  <li>받는 자 연락처: compliance@sentry.io</li>
+  <li>받는 자의 보유 기간: 운영자와의 계약 기간 동안 보관하며, 계약이 끝나면 Sentry 데이터 처리 계약에 따라 삭제합니다.</li>
+  <li>거부 방법과 효과: 설정 → 개인정보 → 「이용 통계 · 오류 보고 보내기」를 끄면 그 순간부터 보내지 않으며, 다음 실행에서도 보내지 않습니다. 앱 기능은 그대로이며, 운영자가 오류를 늦게 알 수 있습니다.</li>
   <li>제3자 정책: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
 </ul>
 
@@ -156,11 +191,29 @@
   <li>전송 시점: 사용자가 프리미엄 AI 해설 기능을 요청한 경우 · 프리미엄 환경 카드가 실시간 대기질 목록을 받는 경우</li>
   <li>대기질 조회: 앱은 전국 17개 시도의 대기질 목록을 이 서버에서 받아 <strong>기기 안에서</strong> 사용자의 시도를 고릅니다. 요청에는 지역·식별자 등 개인정보가 담기지 않으며, 대기질 값은 화면 표시에만 쓰이고 수명 계산에는 쓰이지 않습니다</li>
   <li>역할: AI 해설 요청을 Anthropic Claude API로 안전하게 중계(API 키 서버 보호)하고, 구독 상태를 서버에서 검증</li>
-  <li>저장 데이터: 익명 사용량 기록(랜덤 식별자·월·이용 횟수·처리된 토큰 수)만 저장 — 분석 메시지 본문은 저장하지 않음</li>
-  <li>전송 데이터: 익명화된 분석 수치(실명·생년월일·주소 미포함)</li>
+  <li>저장 데이터(앱이 만든 무작위 식별자 기준 · 이름·생년월일·건강 정보 없음): ① 월별 AI 해설 이용 횟수(본인·가족·친구)와 처리된 토큰 수 ② 그 달 AI 해설을 받은 가족의 앱 내부 번호(가족을 등록한 시각으로 만든 번호 · 가족 이름 아님) ③ 재입력권으로 추가된 해설의 사용 누계 ④ 하루 요청 수(요청 남용 방지). 분석 메시지 본문은 저장하지 않습니다. 보관 기간은 제5조를 참고하세요.</li>
+  <li>전송 데이터: 가명 처리된 분석 결과(예상 수명·건강 위험 요인·장기별 점수)·나이·성별·관계명(실명·생년월일·주소 미포함)</li>
   <li>국외 이전: 미국 (Cloudflare, Inc.)</li>
+  <li>받는 자 연락처: dpo@cloudflare.com</li>
+  <li>받는 자의 보유 기간: 중계 서버 기록은 제5조의 기간이 지나면 자동 삭제합니다. 계약이 끝나면 Cloudflare 데이터 처리 계약에 따라 삭제합니다.</li>
+  <li>거부 방법과 효과: AI 해설과 실시간 대기질을 쓰지 않으면 이 서버로 보내지 않습니다. 이 경우 두 기능만 쓸 수 없습니다.</li>
   <li>제3자 정책: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
+
+<p><span class="highlight">(7) Expo — EAS Update (앱 업데이트 확인)</span></p>
+<ul>
+  <li>전송 시점: 앱을 열 때 새 업데이트가 있는지 확인</li>
+  <li>전송 데이터: 플랫폼(iOS), 앱 런타임 버전, 현재 업데이트 ID, 앱 설치마다 만들어지는 무작위 식별자 (개인 식별 정보 미포함)</li>
+  <li>목적: 오류 수정 등 앱 업데이트 전달</li>
+  <li>국외 이전: 미국 (650 Industries, Inc. · Expo)</li>
+  <li>받는 자 연락처: <a href="https://expo.dev/contact" target="_blank">https://expo.dev/contact</a></li>
+  <li>받는 자의 보유 기간: Expo 정책에 따라 업데이트 제공에 필요한 기간 동안 보관합니다.</li>
+  <li>거부 방법과 효과: 업데이트 확인은 앱을 열 때 자동으로 일어나며 끌 수 없습니다. 원하지 않으면 앱을 쓰지 않아야 하며, 이 경우 오류 수정 업데이트를 받을 수 없습니다.</li>
+  <li>제3자 정책: <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a></li>
+</ul>
+
+<p>위 (1)·(2)·(4)~(7)의 수탁사는 각 사의 데이터 처리 계약·이용 약관에 따라 이 방침과 App Store 지침이 요구하는 수준과 같거나 그 이상으로 데이터를 보호합니다. Apple App Store((3))는 결제를 직접 처리하는 별도 사업자로, Apple의 개인정보 처리방침을 따릅니다.</p>
+<p>국외 이전의 근거: 서비스 제공(계약 이행)에 필요한 처리 위탁이며, 이전 항목·국가·시기와 방법·받는 자와 연락처·이용 목적과 보유 기간·거부 방법을 이 방침에 공개합니다. AI 해설은 이에 더해 보내기 전에 동의를 받습니다.</p>
 
 <h2>5. 개인정보의 보유 및 파기</h2>
 <ul>
@@ -168,39 +221,52 @@
   <li>앱 내에서 데이터 초기화(재입력) 시 기존 데이터는 새 데이터로 대체됩니다. 재입력 시 입력 정보뿐 아니라 체크인 기록과 리포트도 함께 초기화됩니다.</li>
   <li>결제 진단용 로그는 기기 내 AsyncStorage에 최근 20건까지만 보관되며, 새 기록이 쌓이면 오래된 것부터 자동 삭제됩니다 (앱 삭제 시에도 함께 삭제).</li>
   <li>RevenueCat 서버에 저장된 구독 정보는 RevenueCat의 보유 정책에 따릅니다.</li>
-  <li>본 앱은 별도의 자체 서버를 운영하지 않으므로 원격 파기 대상이 아닙니다.</li>
+  <li>중계 서버(Cloudflare Workers · D1)의 사용량 기록은 다음 기간이 지나면 자동으로 삭제됩니다: 월별 AI 해설 이용 횟수·토큰 수 = 13개월 · 가족 해설 번호 = 2개월 · 하루 요청 수 = 다음 날 · 재입력권 해설 사용 누계 = 서비스 운영 기간(구매하신 추가 해설의 사용 여부를 지키기 위해).</li>
+  <li>이 기록에는 이름·생년월일·건강 정보가 없고, 앱이 만든 무작위 식별자에만 연결됩니다. 운영자는 이 식별자만으로는 누구의 기록인지 알 수 없습니다. 기록 삭제를 원하시면 App Store 구입 영수증 이메일(또는 App Store 구입 내역)에 적힌 주문 번호(Order ID)를 아래 이메일로 보내 주세요. 그 번호로 확인되는 중계 서버 기록을 요청을 받은 날부터 10일 이내에 지우고 회신합니다. 요청이 없어도 위 기간이 지나면 자동으로 삭제됩니다.</li>
+  <li>파기 방법: 중계 서버 기록은 데이터베이스에서 지웁니다. 데이터베이스 복원용 기록(Cloudflare D1)에 남은 사본도 최대 30일이 지나면 사라집니다. 기기 안의 정보는 앱 삭제 또는 「모든 데이터 삭제」로 지워집니다.</li>
 </ul>
 
 <h2>6. 이용자의 권리</h2>
 <ul>
-  <li>사용자는 언제든지 앱을 삭제하여 모든 분석 데이터를 파기할 수 있습니다.</li>
+  <li>사용자는 언제든지 앱을 삭제하여 기기 안의 모든 데이터를 파기할 수 있습니다.</li>
+  <li>앱 안에서 지우기: 설정 → 데이터 관리 → 「모든 데이터 삭제」. 입력 정보·결과·가족·친구·버킷리스트·체크인·리포트 등 기기 안 데이터를 지웁니다.</li>
+  <li>이때 구독과 구매하신 권리를 지키기 위해 다음은 기기 안에 남습니다: 구독 상태, 결제 진단 로그(최근 20건), 이용 통계용 무작위 기기 식별자, 결제용 무작위 사용자 ID, 가족 슬롯·재입력권 잔량, 이용 통계·오류 보고 설정. 앱을 삭제하면 함께 지워집니다. 중계 서버 기록은 제5조의 기간에 따라 삭제됩니다.</li>
   <li>재입력 기능을 통해 기존 분석 결과를 새로운 데이터로 교체할 수 있습니다.</li>
   <li>구독 해지 및 환불은 Apple App Store의 구독 관리 페이지에서 직접 진행할 수 있습니다.</li>
+  <li>중계 서버 기록 삭제 요청: 제5조의 방법</li>
+  <li>AI 해설 전송 동의 철회: 제4조 (1)의 방법</li>
+  <li>기기 안의 정보는 운영자가 볼 수 없으므로, 열람과 정정은 앱 화면에서 직접 할 수 있습니다.</li>
+  <li>그 밖의 열람·정정·삭제·처리정지·동의 철회 요청은 아래 이메일로 받으며(대리인을 통한 요청 포함), 요청을 받은 날부터 10일 이내에 결과를 알려 드립니다. 결과에 이의가 있으면 같은 이메일로 이의를 제기할 수 있습니다.</li>
 </ul>
 
 <h2>7. 결제 및 환불 안내</h2>
 <ul>
   <li>본 앱의 모든 인앱 결제는 Apple App Store를 통해 처리됩니다.</li>
-  <li>구독 해지: iOS 설정 > Apple ID > 구독에서 직접 해지 가능합니다.</li>
+  <li>구독 해지: iOS 설정 > Apple 계정(맨 위 이름) > 구독에서 직접 해지할 수 있습니다.</li>
   <li>환불: Apple의 환불 정책에 따라 <a href="https://reportaproblem.apple.com" target="_blank">Apple 환불 신청 페이지</a>에서 신청할 수 있습니다.</li>
   <li>본 앱(Studio JS)은 직접 환불을 처리하지 않으며, 결제 관련 분쟁은 Apple 정책에 따릅니다.</li>
 </ul>
 
 <h2>8. 아동의 개인정보 보호</h2>
-<p>본 앱은 만 14세 미만의 이용을 제한하며, 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 앱 연령 등급은 12+로 설정되어 있습니다.</p>
+<p>본 앱은 만 14세 이상을 대상으로 하며, 처음 시작할 때 만 14세 이상임을 확인(동의)받습니다. 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 앱 연령 등급은 대한민국 12+, 미국·일본 등 그 밖의 지역 13+로 설정되어 있습니다(iOS 26 이전 운영 체제에서는 12+).</p>
 
 <h2>9. 개인정보 보호책임자</h2>
 <ul>
-  <li>상호: Studio JS</li>
+  <li>개인정보 보호책임자: seonwoo yang</li>
+  <li>브랜드: Studio JS</li>
   <li>이메일: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
 <h2>10. 개인정보 처리방침 변경</h2>
-<p>본 방침이 변경될 경우, 앱 내 공지 또는 본 페이지를 통해 사전 고지합니다. 중요한 변경 사항은 시행일 7일 전, 그 외 변경은 시행일 당일 고지합니다.</p>
+<p>본 방침이 변경될 경우, 앱 내 공지 또는 본 페이지를 통해 사전 고지합니다. 중요한 변경 사항은 시행일 7일 전, 그 외 변경은 시행일 당일 고지합니다. 다만 실제 처리 방식과 다르게 적힌 내용을 바로잡는 정정은 즉시 시행합니다.</p>
+<p><span class="highlight">개정 이력</span></p>
+<ul>
+  <li>2026년 10월 7일 (정정 · 즉시 시행): 중계 서버가 저장하는 사용량 기록과 보관 기간 · 삭제 방법을 적고 「자체 서버를 운영하지 않는다」는 잘못된 문장을 삭제 · AI 해설로 보내는 항목(가명 처리된 분석 결과·나이·성별·관계명)과 가족 1명당 월 1회 한도 · RevenueCat·Sentry 전송 시점 · Expo 앱 업데이트 확인 추가 · 앱 안 「모든 데이터 삭제」와 남는 항목 · 「Apple 계정」 명칭 · 연령 문구 · 주문 번호로 중계 서버 기록 삭제 요청 · 받는 자별 연락처·보유 기간·거부 방법 · 안전성 확보 조치 · 앱이 자동으로 만들거나 보내는 정보 · 이용 목적 · AI 해설로 보내는 건강 관련 항목 · 동의 철회 · 권리 행사 방법과 기한 · 연령 등급 · 개인정보 보호책임자 · 설정의 동의 철회와 이용 통계 · 오류 보고 끄기 · Sentry 전송 항목(위치 · IP 미저장) · Amplitude 전송 항목과 대략적 위치 · 수탁사 동등 보호 · 브랜드 표기</li>
+</ul>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>최종 수정일: 2026년 9월 16일</p>
+  <p>최종 수정일: 2026년 10월 7일</p>
   <p><a href="support.html#ko">고객 지원 (Support)</a></p>
 </div>
 
@@ -211,7 +277,7 @@
 
 <h1>LIFE CLOCK · 수명 시계</h1>
 <p class="subtitle">Privacy Policy</p>
-<p>Effective Date: September 16, 2026</p>
+<p>Effective Date: October 7, 2026</p>
 
 <h2>1. Information We Collect</h2>
 <p>This app collects the following information for lifespan prediction analysis:</p>
@@ -233,31 +299,54 @@
 <p><span class="highlight">Payment Information (for Premium subscriptions / in-app purchases):</span></p>
 <ul>
   <li>In-app purchases are processed directly by the Apple App Store. This app does not collect credit card or other payment method information.</li>
-  <li>For subscription verification, an anonymous user ID, receipt, and subscription status are transmitted to RevenueCat servers.</li>
+  <li>For subscription verification, a random user ID created by the app, the receipt, and subscription status are transmitted to RevenueCat servers.</li>
   <li>Payment diagnostic logs are stored on-device in AsyncStorage for <strong>the 20 most recent entries only</strong>; older records are deleted automatically. The transaction-record retention duty under the Korean Electronic Commerce Act is fulfilled by Apple as the seller and by the payment verification provider (RevenueCat).</li>
+</ul>
+<p><span class="highlight">Information the app creates or sends automatically:</span></p>
+<ul>
+  <li>A random user ID for payments (created when the app first starts)</li>
+  <li>A random device identifier for usage statistics, and usage event types (opening the app, viewing a result, etc.)</li>
+  <li>App version, device model and OS version (for error diagnostics)</li>
+  <li>An installation identifier for app update checks (Expo)</li>
+  <li>Usage records on the relay server (Section 4 (6))</li>
 </ul>
 
 <h2>2. Purpose of Collection and Use</h2>
-<p>Collected information is used <span class="highlight">solely for providing lifespan prediction services</span>:</p>
+<p>Collected information is used <span class="highlight">only for the purposes below</span>:</p>
 <ul>
   <li>Epidemiology-based life expectancy calculation</li>
   <li>Myeongni interpretation analysis (Saju & name study, cultural reference) (Premium)</li>
   <li>Monte Carlo simulation (Premium)</li>
   <li>Lifespan recalculation based on check-in data</li>
   <li>In-app subscription verification and payment history management</li>
+  <li>AI Insight generation (Premium)</li>
+  <li>Usage-limit management and abuse prevention</li>
+  <li>Error diagnostics</li>
+  <li>Service improvement (usage statistics)</li>
+  <li>Delivering app updates</li>
 </ul>
 
 <h2>3. Storage and Processing</h2>
-<p><span class="highlight">All entered analysis data is stored and processed only on the user's device.</span></p>
+<p><span class="highlight">The information you enter (name, date of birth, health answers, etc.) is stored on your device; we do not store it on our servers.</span></p>
 <ul>
-  <li>Personal analysis data is not transmitted to external servers.</li>
+  <li>Only the exceptions below and the items listed in Section 4 leave the device.</li>
   <li>AsyncStorage (on-device local storage) is used.</li>
-  <li>All data is automatically deleted when the app is uninstalled.</li>
+  <li>All data on the device is deleted when the app is uninstalled. To delete data inside the app, see Section 6.</li>
+  <li>Your entered data stays on the device even after a subscription expires and is restored as-is when you subscribe again (expiry only locks features; it does not delete data).</li>
   <li>No cloud backup or synchronization features are provided.</li>
-  <li>Exception: Payment verification data (receipts, anonymous ID) is transmitted to RevenueCat servers, and when using AI Insight, only anonymized analysis values are sent — via a Cloudflare Workers proxy (USA) — to the Anthropic Claude API (see Section 4).</li>
+  <li>Exception: Payment verification data (receipts, a random user ID) is transmitted to RevenueCat servers. When you request an AI Insight, pseudonymized analysis results (expected lifespan, health risk factors, organ scores) together with age, gender and relationship label (e.g. "Father") are sent — via a Cloudflare Workers relay server (USA) — to the Anthropic Claude API. Your name, date of birth and address are not sent (see Section 4).</li>
+  <li>The relay server stores usage records such as the number of AI Insights used, keyed to a random identifier created by the app. It does not store names, dates of birth or health information (see Section 4 (6) and Section 5).</li>
   <li>Anonymous usage statistics (event types, random device identifier) are transmitted to Amplitude Inc. (USA) servers for service improvement purposes.</li>
-  <li>Anonymized crash/error information is transmitted to Functional Software Inc. (Sentry, USA) servers for error diagnostics.</li>
-  <li>No personally identifiable information (name, date of birth, health data) is included in data sent to these services.</li>
+  <li>Error information with identifying details removed is transmitted to Functional Software Inc. (Sentry, USA) servers for error diagnostics.</li>
+  <li>To deliver app updates, the app checks the Expo (EAS Update, USA) server for a new update when it opens (see Section 4 (7)).</li>
+  <li>No personally identifiable information (name, date of birth, health data) is included in data sent to Amplitude, Sentry or Expo.</li>
+</ul>
+<p><span class="highlight">Security Measures</span></p>
+<ul>
+  <li>The information you enter is kept on your device, not on our servers.</li>
+  <li>All communication that leaves the device is encrypted with HTTPS.</li>
+  <li>The AI service access key is not in the app; it is kept only on the relay server.</li>
+  <li>The relay server records only the random identifier created by the app, and is configured not to store per-request access logs (request headers, IP addresses).</li>
 </ul>
 
 <h2>4. Third-Party Services</h2>
@@ -266,44 +355,57 @@
 <p><span class="highlight">(1) Anthropic Claude API (AI Insight Generation)</span></p>
 <ul>
   <li>When transmitted: Only when the user explicitly requests the Premium AI Insight feature</li>
-  <li>Data transmitted: Anonymized analysis result values only (no personally identifiable information)</li>
-  <li>Transmission: HTTPS-encrypted communication</li>
+  <li>Data transmitted: Pseudonymized analysis results (expected lifespan, names of health risk factors such as blood pressure or smoking, organ risk scores and other health-related information) together with age, gender and relationship label (e.g. "Father"). Your name, date of birth and address are not sent.</li>
+  <li>Transmission: HTTPS-encrypted communication (via the Cloudflare Workers relay server)</li>
   <li>International transfer: USA (Anthropic PBC)</li>
+  <li>Recipient contact: privacy@anthropic.com</li>
+  <li>Recipient's retention period: Inputs and outputs are deleted automatically within 30 days. Where a usage-policy review is needed, they may be kept for up to 2 years (Anthropic policy).</li>
+  <li>Consent and refusal: The first time you request an AI Insight, the app tells you what is sent and to whom, and asks for your consent. If you do not consent or do not request an AI Insight, nothing is sent, and all other features remain available.</li>
+  <li>Withdrawing consent: Settings → 개인정보 (Privacy) → tap 「철회」 (Withdraw) next to 「AI 해설 전송 동의」 (Consent to send data for AI Insight). This erases the consent record, and the app asks again at the next request (「모든 데이터 삭제」 (Delete All Data) also erases it). Nothing new is sent after withdrawal. Content already sent is deleted by Anthropic after the retention period above.</li>
   <li>Third-party policy: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>Usage limits: 1 time per month for yourself, and 1 time per month for each family slot you own (identical for monthly and yearly subscriptions). Each re-entry ticket you purchase adds one more summary for yourself; that extra does not expire at the end of the month.</li>
+  <li>Usage limits: 1 time per month for yourself, and 1 time per month for each family member — up to as many family members per month as the family slots you own (identical for monthly and yearly subscriptions). Each re-entry ticket you purchase adds one more AI Insight for yourself; that extra does not expire at the end of the month.</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (In-App Subscription Management)</span></p>
 <ul>
-  <li>When transmitted: When the user makes an in-app purchase or requests subscription status verification</li>
-  <li>Data transmitted: Anonymous user ID, Apple App Store receipt, subscription status</li>
+  <li>When transmitted: When the app starts (subscription status check) and when you make an in-app purchase or restore purchases</li>
+  <li>Data transmitted: A random user ID created by the app, Apple App Store receipt, subscription status</li>
   <li>Purpose: In-app subscription verification, subscription status management, refund processing support</li>
   <li>Transmission: HTTPS-encrypted communication</li>
   <li>International transfer: USA (RevenueCat, Inc.)</li>
+  <li>Recipient contact: compliance@revenuecat.com</li>
+  <li>Recipient's retention period: Kept for the term of our agreement and deleted under the RevenueCat Data Processing Addendum when it ends.</li>
+  <li>How to refuse, and the effect: When the app starts, a random user ID is sent to check subscription status. If you do not want this, you need to stop using the app; subscriptions and purchases are then unavailable.</li>
   <li>Third-party policy: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(3) Apple App Store (In-App Payment Processing)</span></p>
 <ul>
-  <li>In-app payment information (credit cards, Apple ID, etc.) is processed directly by Apple. This app does not collect or store payment method information.</li>
+  <li>In-app payment information (credit cards, Apple Account, etc.) is processed directly by Apple. This app does not collect or store payment method information.</li>
   <li>Third-party policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
 </ul>
 
-<p><span class="highlight">(4) Amplitude (Anonymous Usage Statistics)</span></p>
+<p><span class="highlight">(4) Amplitude (Usage Statistics)</span></p>
 <ul>
   <li>When transmitted: Continuously during app use</li>
-  <li>Data transmitted: Anonymous random device identifier, usage event types (no personally identifiable information)</li>
+  <li>Data transmitted: a random device identifier, usage event types (11 kinds, such as opening the app or viewing a result), the plan type (monthly or yearly) on purchase events, and the subject type (self, family or friend) on AI Insight request events. No name, date of birth or health information is included. Your device's IP address reaches Amplitude's servers as part of the connection, and Amplitude may use it to estimate an approximate location (country, region, city).</li>
   <li>Purpose: Service improvement, feature usage analysis</li>
   <li>International transfer: USA (Amplitude Inc.)</li>
+  <li>Recipient contact: privacy@amplitude.com</li>
+  <li>Recipient's retention period: Kept for the term of our agreement and deleted under the Amplitude Data Processing Addendum when it ends.</li>
+  <li>How to refuse, and the effect: Turn off Settings → 개인정보 (Privacy) → 「이용 통계 · 오류 보고 보내기」 (Send usage statistics and error reports). Nothing is sent from that moment, including on later launches. All app features keep working.</li>
   <li>Third-party policy: <a href="https://amplitude.com/privacy" target="_blank">Amplitude Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(5) Sentry (Crash &amp; Error Monitoring)</span></p>
 <ul>
   <li>When transmitted: When app errors occur</li>
-  <li>Data transmitted: Anonymized error messages (personal data masked), app version</li>
+  <li>Data transmitted: error messages and exception details (with dates of birth, name-like text and the payment user ID removed), the screen interactions and network activity just before the error (identifiers in addresses removed; app logs are not sent), app version, device information (model, OS version, language, memory, etc.), and a random identifier Sentry creates for each installation. Sentry is configured not to store IP addresses or locations.</li>
   <li>Purpose: Error diagnostics and service stability improvement</li>
   <li>International transfer: USA (Functional Software Inc.)</li>
+  <li>Recipient contact: compliance@sentry.io</li>
+  <li>Recipient's retention period: Kept for the term of our agreement and deleted under the Sentry Data Processing Addendum when it ends.</li>
+  <li>How to refuse, and the effect: Turn off Settings → 개인정보 (Privacy) → 「이용 통계 · 오류 보고 보내기」 (Send usage statistics and error reports). Nothing is sent from that moment, including on later launches. All app features keep working; the operator may learn about errors later.</li>
   <li>Third-party policy: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
 </ul>
 
@@ -312,11 +414,29 @@
   <li>When transmitted: When the user requests the Premium AI Insight feature · When the Premium environment card loads the real-time air-quality list</li>
   <li>Air-quality lookup: The app downloads the air-quality list for all 17 Korean provinces from this server and picks the user’s province <strong>on the device</strong>. The request contains no region, identifier or other personal data, and air-quality values are used only for display, not for the life-expectancy calculation</li>
   <li>Role: Securely relays AI Insight requests to the Anthropic Claude API (keeping the API key server-side) and verifies subscription status on the server</li>
-  <li>Data stored: Only anonymous usage records (random identifier, month, usage count, number of tokens processed) — analysis message content is not stored</li>
-  <li>Data transmitted: Anonymized analysis values (no name, date of birth, or address)</li>
+  <li>Data stored (keyed to a random identifier created by the app · no name, date of birth or health information): (1) monthly AI Insight usage counts (self, family, friend) and number of tokens processed (2) the in-app numbers of family members who received an AI Insight that month (a number made from the time the family member was added — not their names) (3) the running count of extra AI Insights used from re-entry tickets (4) the number of requests per day (to prevent abuse). Analysis message content is not stored. See Section 5 for retention periods.</li>
+  <li>Data transmitted: Pseudonymized analysis results (expected lifespan, health risk factors, organ scores), age, gender and relationship label (no name, date of birth, or address)</li>
   <li>International transfer: USA (Cloudflare, Inc.)</li>
+  <li>Recipient contact: dpo@cloudflare.com</li>
+  <li>Recipient's retention period: Relay-server records are deleted automatically after the periods in Section 5. When our agreement ends, data is deleted under the Cloudflare Data Processing Addendum.</li>
+  <li>How to refuse, and the effect: If you do not use AI Insight and the real-time air-quality line, nothing is sent to this server; only those two features are then unavailable.</li>
   <li>Third-party policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
+
+<p><span class="highlight">(7) Expo — EAS Update (App Update Check)</span></p>
+<ul>
+  <li>When transmitted: When the app opens, to check for a new update</li>
+  <li>Data transmitted: Platform (iOS), app runtime version, current update ID, a random identifier created for each app installation (no personally identifiable information)</li>
+  <li>Purpose: Delivering app updates such as bug fixes</li>
+  <li>International transfer: USA (650 Industries, Inc. · Expo)</li>
+  <li>Recipient contact: <a href="https://expo.dev/contact" target="_blank">https://expo.dev/contact</a></li>
+  <li>Recipient's retention period: Kept as long as needed to deliver updates, under Expo's policy.</li>
+  <li>How to refuse, and the effect: The update check runs automatically when the app opens and cannot be turned off. If you do not want this, you need to stop using the app; you then cannot receive bug-fix updates.</li>
+  <li>Third-party policy: <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a></li>
+</ul>
+
+<p>The processors in (1), (2) and (4)–(7) above protect data, under their data processing agreements and terms of service, at a level equal to or higher than this policy and the App Store guidelines require. Apple App Store ((3)) is a separate company that processes payments directly and follows Apple's privacy policy.</p>
+<p>Basis for international transfer: processing entrusted to these providers is necessary to provide the service (to perform our contract with you), and this policy discloses the items, countries, timing and method, recipients and their contacts, purposes and retention periods, and how to refuse. For AI Insight, we additionally ask for your consent before anything is sent.</p>
 
 <h2>5. Data Retention and Deletion</h2>
 <ul>
@@ -324,39 +444,52 @@
   <li>When data is reset within the app (re-entry), existing data is replaced with new data. Re-entry resets not only your entered information but also your check-in records and reports.</li>
   <li>Payment diagnostic logs are retained on-device in AsyncStorage for the 20 most recent entries only; as new records accumulate, the oldest are deleted automatically (and all are deleted upon app uninstallation).</li>
   <li>Subscription information stored on RevenueCat servers follows RevenueCat's retention policy.</li>
-  <li>This app does not operate its own servers, so remote deletion does not apply.</li>
+  <li>Usage records on the relay server (Cloudflare Workers · D1) are deleted automatically after the following periods: monthly AI Insight usage counts and token counts = 13 months · family AI Insight numbers = 2 months · daily request counts = the next day · running count of re-entry ticket AI Insights used = while the service operates (to protect the extra AI Insights you purchased).</li>
+  <li>These records contain no name, date of birth or health information and are linked only to a random identifier created by the app. The operator cannot tell whose record it is from that identifier alone. If you want the records deleted, please send the order number (Order ID) shown in your App Store purchase receipt email (or in your App Store purchase history) to the email address below. We will delete the relay-server records identified by that number within 10 days of receiving your request and reply to you. Even without a request, the records are deleted automatically after the periods above.</li>
+  <li>How data is destroyed: relay-server records are deleted from the database. Copies left in the database restore history (Cloudflare D1) disappear after at most 30 days. Information on your device is erased by uninstalling the app or by 「모든 데이터 삭제」 (Delete All Data).</li>
 </ul>
 
 <h2>6. User Rights</h2>
 <ul>
-  <li>Users can delete all analysis data at any time by uninstalling the app.</li>
+  <li>Users can delete all data on the device at any time by uninstalling the app.</li>
+  <li>Deleting inside the app: Settings → 데이터 관리 (Data Management) → 「모든 데이터 삭제」 (Delete All Data). The app screens are in Korean. This deletes the data on the device, including your entries, results, family, friends, bucket list, check-ins and reports.</li>
+  <li>To protect your subscription and purchased rights, the following remain on the device: subscription status, payment diagnostic log (20 most recent entries), the random device identifier for usage statistics, the random user ID for payments, your remaining family slots and re-entry tickets, and your usage statistics and error report setting. They are deleted when you uninstall the app. Relay-server records are deleted according to the periods in Section 5.</li>
   <li>Users can replace existing analysis results with new data through the re-entry feature.</li>
   <li>Subscription cancellation and refund requests can be made directly through the Apple App Store subscription management page.</li>
+  <li>Requesting deletion of relay-server records: see Section 5</li>
+  <li>Withdrawing consent to send data for AI Insight: see Section 4 (1)</li>
+  <li>The operator cannot see the information on your device, so you can view and correct it directly in the app.</li>
+  <li>Other requests to access, correct, delete, suspend processing or withdraw consent can be sent to the email below (including through a representative). We will tell you the result within 10 days of receiving the request. If you disagree with the result, you can object by replying to the same email.</li>
 </ul>
 
 <h2>7. Payment and Refund Information</h2>
 <ul>
   <li>All in-app purchases in this app are processed through the Apple App Store.</li>
-  <li>Subscription cancellation: Available in iOS Settings > Apple ID > Subscriptions.</li>
+  <li>Subscription cancellation: Available in iOS Settings > Apple Account (your name at the top) > Subscriptions.</li>
   <li>Refunds: Can be requested through <a href="https://reportaproblem.apple.com" target="_blank">Apple's refund request page</a> in accordance with Apple's refund policy.</li>
   <li>Studio JS does not directly process refunds. Payment-related disputes follow Apple's policy.</li>
 </ul>
 
 <h2>8. Children's Privacy</h2>
-<p>This app restricts use by children under the age of 14 and does not intentionally collect personal information from children under 14. The app's age rating is set to 12+.</p>
+<p>This app is intended for users aged 14 and over, and asks you to confirm (agree) that you are 14 or older when you first start it. It does not intentionally collect personal information from children under 14. The app's age rating is set to 12+ in Korea and 13+ in other regions such as the US and Japan (12+ on operating systems before iOS 26).</p>
 
 <h2>9. Privacy Officer</h2>
 <ul>
-  <li>Company: Studio JS</li>
+  <li>Privacy Officer: seonwoo yang</li>
+  <li>Brand: Studio JS</li>
   <li>Email: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
 <h2>10. Changes to This Privacy Policy</h2>
-<p>If this policy is changed, we will notify you in advance through in-app announcements or this page. Significant changes will be announced 7 days before the effective date; other changes will be announced on the effective date.</p>
+<p>If this policy is changed, we will notify you in advance through in-app announcements or this page. Significant changes will be announced 7 days before the effective date; other changes will be announced on the effective date. Corrections that fix statements which did not match how data is actually handled take effect immediately.</p>
+<p><span class="highlight">Revision History</span></p>
+<ul>
+  <li>October 7, 2026 (correction · effective immediately): Added the usage records stored on the relay server with their retention periods and deletion, and removed the incorrect statement that we operate no server of our own · AI Insight data items (pseudonymized analysis results, age, gender, relationship label) and the per-family-member monthly limit · RevenueCat and Sentry transmission timing · Expo app update check · in-app 「모든 데이터 삭제」 (Delete All Data) and what remains · "Apple Account" naming · age wording · added the missing sentence on data after subscription expiry · deletion requests for relay-server records by order number · each recipient's contact, retention period and how to refuse · security measures · information the app creates or sends automatically · purposes of use · health-related items sent for AI Insight · withdrawing consent · how and when we handle your requests · age rating · privacy officer · withdrawing consent and turning off usage statistics and error reports in Settings · Sentry data items (no IP address or location stored) · Amplitude data items and approximate location · equal protection by processors · brand label</li>
+</ul>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>Last updated: September 16, 2026</p>
+  <p>Last updated: October 7, 2026</p>
   <p><a href="support.html#en">Support</a></p>
 </div>
 
@@ -367,7 +500,7 @@
 
 <h1>寿命時計 · LIFE CLOCK</h1>
 <p class="subtitle">プライバシーポリシー</p>
-<p>施行日: 2026年9月16日</p>
+<p>施行日: 2026年10月7日</p>
 
 <h2>1. 収集する個人情報</h2>
 <p>本アプリは寿命予測分析のため、以下の情報を収集します。</p>
@@ -389,31 +522,54 @@
 <p><span class="highlight">決済情報(プレミアム購読・アプリ内課金時):</span></p>
 <ul>
   <li>アプリ内課金はApple App Storeが直接処理し、本アプリはクレジットカード情報など決済手段情報を収集しません。</li>
-  <li>購読検証のため、ユーザー匿名ID、レシート、購読状態がRevenueCatサーバーに送信されます。</li>
+  <li>購読検証のため、アプリが作成したランダムなユーザーID、レシート、購読状態がRevenueCatサーバーに送信されます。</li>
   <li>決済診断用ログはデバイス内のAsyncStorageに<strong>直近20件のみ</strong>保存され、それより古い記録は自動的に削除されます。韓国電子商取引法上の取引記録保存義務は、販売者であるAppleおよび決済検証事業者(RevenueCat)が履行します。</li>
+</ul>
+<p><span class="highlight">アプリが自動的に作成・送信する情報:</span></p>
+<ul>
+  <li>決済用のランダムなユーザーID(アプリの初回起動時に作成)</li>
+  <li>利用統計用のランダム端末識別子と利用イベント種別(アプリを開く、結果を見るなど)</li>
+  <li>アプリバージョン、端末の機種、OSバージョン(エラー診断用)</li>
+  <li>アップデート確認用のインストール識別子(Expo)</li>
+  <li>中継サーバーの使用量記録(第4条(6))</li>
 </ul>
 
 <h2>2. 個人情報の収集および利用目的</h2>
-<p>収集された情報は<span class="highlight">寿命予測分析サービスの提供のみ</span>に使用されます。</p>
+<p>収集された情報は<span class="highlight">以下の目的にのみ</span>使用されます。</p>
 <ul>
   <li>疫学に基づく平均寿命計算</li>
   <li>命理解釈分析(四柱推命・姓名学、文化的参考指標)(プレミアム)</li>
   <li>モンテカルロシミュレーション(プレミアム)</li>
   <li>チェックイン情報に基づく寿命の再計算</li>
   <li>アプリ内購読の検証および決済履歴の管理</li>
+  <li>AI解説の生成(プレミアム)</li>
+  <li>利用上限の管理と不正利用の防止</li>
+  <li>エラー診断</li>
+  <li>サービス改善(利用統計)</li>
+  <li>アプリのアップデート提供</li>
 </ul>
 
 <h2>3. 個人情報の保存および処理方法</h2>
-<p><span class="highlight">入力されたすべての分析データはユーザーのデバイス内でのみ保存・処理されます。</span></p>
+<p><span class="highlight">入力された情報(氏名・生年月日・健康に関する回答など)はユーザーのデバイス内に保存され、運営者のサーバーには保存しません。</span></p>
 <ul>
-  <li>分析用個人情報は外部サーバーへ送信しません。</li>
+  <li>デバイスの外へ出るのは、以下の例外と第4条に記載した項目のみです。</li>
   <li>AsyncStorage(デバイス内ローカルストレージ)を使用します。</li>
-  <li>アプリ削除時にすべてのデータが自動的に削除されます。</li>
+  <li>アプリ削除時にデバイス内のすべてのデータが削除されます。アプリ内での削除方法は第6条をご覧ください。</li>
+  <li>購読が終了しても入力データはデバイス内に保管され、再購読時にそのまま復元されます(終了は機能のロックであり、データの削除ではありません)。</li>
   <li>クラウドバックアップや同期機能は提供しません。</li>
-  <li>例外: 決済検証情報(レシート、匿名ID)はRevenueCatサーバーへ送信され、AI解説利用時は匿名化された分析数値のみCloudflare Workersプロキシ(米国)を経由してAnthropic Claude APIへ送信されます(第4条参照)。</li>
+  <li>例外: 決済検証情報(レシート、ランダムなユーザーID)はRevenueCatサーバーへ送信されます。AI解説を要請すると、仮名化された分析結果(予想寿命・健康リスク要因・臓器別スコア)と年齢・性別・続柄(例: 父)がCloudflare Workers中継サーバー(米国)を経由してAnthropic Claude APIへ送信されます。氏名・生年月日・住所は送信しません(第4条参照)。</li>
+  <li>中継サーバーは、AI解説の利用回数などの使用量記録を、アプリが作成したランダムな識別子に基づいて保存します。氏名・生年月日・健康情報は保存しません(第4条(6)・第5条参照)。</li>
   <li>サービス品質改善のため、匿名の利用統計(イベント種別、ランダム端末識別子)がAmplitude Inc.(米国)サーバーへ送信されます。</li>
-  <li>アプリエラー診断のため、匿名化されたエラー情報がFunctional Software Inc.(Sentry、米国)サーバーへ送信されます。</li>
-  <li>上記2サービスへの送信データには、氏名・生年月日・健康情報等の個人識別情報は含まれません。</li>
+  <li>アプリエラー診断のため、識別情報を取り除いたエラー情報がFunctional Software Inc.(Sentry、米国)サーバーへ送信されます。</li>
+  <li>アプリのアップデートを受け取るため、アプリを開いた時にExpo(EAS Update、米国)サーバーへ新しいアップデートの有無を確認します(第4条(7)参照)。</li>
+  <li>Amplitude・Sentry・Expoへの送信データには、氏名・生年月日・健康情報等の個人識別情報は含まれません。</li>
+</ul>
+<p><span class="highlight">安全管理措置</span></p>
+<ul>
+  <li>入力された情報は運営者のサーバーに保管せず、デバイス内に保存します。</li>
+  <li>デバイスの外へ送る通信はすべてHTTPSで暗号化します。</li>
+  <li>AIサービスへの接続キーはアプリに含めず、中継サーバーにのみ置きます。</li>
+  <li>中継サーバーはアプリが作成したランダムな識別子のみで記録し、リクエストごとの接続記録(リクエストヘッダー・IPアドレス)を保存しないよう設定しています。</li>
 </ul>
 
 <h2>4. 第三者サービスの利用</h2>
@@ -422,44 +578,57 @@
 <p><span class="highlight">(1) Anthropic Claude API (AI解説生成)</span></p>
 <ul>
   <li>送信時点: ユーザーがプレミアムAI解説機能を明示的に要請した場合のみ</li>
-  <li>送信データ: 匿名化された分析結果の数値のみ(個人識別情報を含まない)</li>
-  <li>送信処理: HTTPS暗号化通信</li>
+  <li>送信データ: 仮名化された分析結果(予想寿命、健康リスク要因の名称(例: 血圧・喫煙)、臓器別リスクスコアなどの健康関連情報)と年齢・性別・続柄(例: 父)。氏名・生年月日・住所は送信しません。</li>
+  <li>送信処理: HTTPS暗号化通信(Cloudflare Workers中継サーバー経由)</li>
   <li>国外移転: 米国(Anthropic PBC)</li>
+  <li>受領者の連絡先: privacy@anthropic.com</li>
+  <li>受領者の保有期間: 受け取った入力と出力を30日以内に自動削除します。利用ポリシー違反の確認が必要な場合は最長2年保管することがあります(Anthropicのポリシー)。</li>
+  <li>同意と拒否: 初めてAI解説を要請する時、送信する項目と送信先をお知らせし、同意をいただきます。同意しない場合、またはAI解説を要請しない場合は何も送信せず、その他の機能はそのまま利用できます。</li>
+  <li>同意の撤回: 設定 → 「개인정보」(プライバシー) → 「AI 해설 전송 동의」(AI解説の送信への同意)の「철회」(撤回)を押すと同意の記録が消え、次の要請時に改めて同意を伺います(「모든 데이터 삭제」(すべてのデータを削除)でも消えます)。撤回後は新たに送信しません。すでに送信した内容は、上記の保有期間が過ぎるとAnthropicで削除されます。</li>
   <li>第三者ポリシー: <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
-  <li>使用制限: 本人 月1回、家族は保有する家族スロットごとに月1回(月額購読・年額購読で同一)。再入力チケットを購入すると本人の解説が購入1件につき1回追加され、この追加分は月が変わっても消えません。</li>
+  <li>使用制限: 本人 月1回、家族は家族1人につき月1回 — 1か月に解説を受けられる家族の人数は保有する家族スロット数まで(月額購読・年額購読で同一)。再入力チケットを購入すると本人の解説が購入1件につき1回追加され、この追加分は月が変わっても消えません。</li>
 </ul>
 
 <p><span class="highlight">(2) RevenueCat (アプリ内購読管理)</span></p>
 <ul>
-  <li>送信時点: ユーザーがアプリ内課金または購読状態の確認を要請した場合</li>
-  <li>送信データ: ユーザー匿名ID、Apple App Storeレシート、購読状態</li>
+  <li>送信時点: アプリ起動時(購読状態の確認)およびアプリ内課金・購入の復元時</li>
+  <li>送信データ: アプリが作成したランダムなユーザーID、Apple App Storeレシート、購読状態</li>
   <li>目的: アプリ内購読の検証、購読状態の管理、返金処理サポート</li>
   <li>送信処理: HTTPS暗号化通信</li>
   <li>国外移転: 米国(RevenueCat, Inc.)</li>
+  <li>受領者の連絡先: compliance@revenuecat.com</li>
+  <li>受領者の保有期間: 運営者との契約期間中保管し、契約終了時にRevenueCatのデータ処理契約に従って削除します。</li>
+  <li>拒否の方法と効果: アプリを起動すると、購読状態の確認のためランダムなユーザーIDが送信されます。望まない場合はアプリの利用を止める必要があり、その場合は購読と購入を利用できません。</li>
   <li>第三者ポリシー: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(3) Apple App Store (アプリ内決済処理)</span></p>
 <ul>
-  <li>アプリ内決済情報(クレジットカード、Apple IDなど)はAppleが直接処理し、本アプリは決済手段情報を収集・保存しません。</li>
+  <li>アプリ内決済情報(クレジットカード、Appleアカウントなど)はAppleが直接処理し、本アプリは決済手段情報を収集・保存しません。</li>
   <li>第三者ポリシー: <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
 </ul>
 
-<p><span class="highlight">(4) Amplitude(匿名利用統計)</span></p>
+<p><span class="highlight">(4) Amplitude(利用統計)</span></p>
 <ul>
   <li>送信時点: アプリ使用中、常時</li>
-  <li>送信データ: 匿名ランダム端末識別子、利用イベント種別(個人識別情報を含まない)</li>
+  <li>送信データ: ランダム端末識別子、利用イベント種別(アプリを開く・結果を見るなど11種類)、決済イベントのプラン種別(月額・年額)、AI解説要請イベントの対象種別(本人・家族・友人)。氏名・生年月日・健康情報は含みません。送信の過程で端末のIPアドレスがAmplitudeのサーバーに届き、Amplitudeはこれを使っておおよその位置(国・地域・都市)を推定することがあります。</li>
   <li>目的: サービス改善、機能利用状況の把握</li>
   <li>国外移転: 米国(Amplitude Inc.)</li>
+  <li>受領者の連絡先: privacy@amplitude.com</li>
+  <li>受領者の保有期間: 運営者との契約期間中保管し、契約終了時にAmplitudeのデータ処理契約に従って削除します。</li>
+  <li>拒否の方法と効果: 設定 → 「개인정보」(プライバシー) → 「이용 통계 · 오류 보고 보내기」(利用統計・エラー報告を送る)をオフにすると、その時点から送信せず、次回以降の起動でも送信しません。アプリの機能はそのまま使えます。</li>
   <li>第三者ポリシー: <a href="https://amplitude.com/privacy" target="_blank">Amplitude Privacy Policy</a></li>
 </ul>
 
 <p><span class="highlight">(5) Sentry(クラッシュ・エラーモニタリング)</span></p>
 <ul>
   <li>送信時点: アプリエラー発生時</li>
-  <li>送信データ: 匿名化されたエラーメッセージ(個人情報マスキング処理済)、アプリバージョン</li>
+  <li>送信データ: エラーメッセージと例外情報(生年月日・氏名の形をした文字・決済用ユーザーIDを取り除いたもの)、エラー直前の画面操作・ネットワーク記録(アドレス内の識別子は削除・アプリのログは送信しない)、アプリバージョン、端末情報(機種・OSバージョン・言語・メモリなど)、Sentryがインストールごとに作成するランダムな識別子。IPアドレスと位置は保存しないよう設定しています。</li>
   <li>目的: エラー診断およびサービス安定性の改善</li>
   <li>国外移転: 米国(Functional Software Inc.)</li>
+  <li>受領者の連絡先: compliance@sentry.io</li>
+  <li>受領者の保有期間: 運営者との契約期間中保管し、契約終了時にSentryのデータ処理契約に従って削除します。</li>
+  <li>拒否の方法と効果: 設定 → 「개인정보」(プライバシー) → 「이용 통계 · 오류 보고 보내기」(利用統計・エラー報告を送る)をオフにすると、その時点から送信せず、次回以降の起動でも送信しません。アプリの機能はそのまま使えますが、運営者がエラーに気づくのが遅れることがあります。</li>
   <li>第三者ポリシー: <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
 </ul>
 
@@ -468,11 +637,29 @@
   <li>送信時点: ユーザーがプレミアムAI解説機能を要請した場合 · プレミアム環境カードがリアルタイム大気質リストを取得する場合</li>
   <li>大気質の照会: アプリは全国17の市・道の大気質リストをこのサーバーから受け取り、<strong>端末内で</strong>ユーザーの市・道を選びます。リクエストに地域・識別子などの個人情報は含まれず、大気質の値は画面表示のみに使われ、寿命計算には使われません</li>
   <li>役割: AI解説リクエストをAnthropic Claude APIへ安全に中継(APIキーをサーバー側で保護)し、購読状態をサーバーで検証</li>
-  <li>保存データ: 匿名の使用量記録(ランダム識別子・月・利用回数・処理されたトークン数)のみ保存 — 分析メッセージ本文は保存しません</li>
-  <li>送信データ: 匿名化された分析数値(氏名・生年月日・住所を含まない)</li>
+  <li>保存データ(アプリが作成したランダムな識別子に基づく・氏名・生年月日・健康情報なし): ① 月別のAI解説利用回数(本人・家族・友人)と処理されたトークン数 ② その月にAI解説を受けた家族のアプリ内番号(家族を登録した時刻から作られる番号・家族の氏名ではありません) ③ 再入力チケットで追加された解説の使用累計 ④ 1日あたりのリクエスト数(不正利用防止)。分析メッセージ本文は保存しません。保管期間は第5条をご覧ください。</li>
+  <li>送信データ: 仮名化された分析結果(予想寿命・健康リスク要因・臓器別スコア)・年齢・性別・続柄(氏名・生年月日・住所を含まない)</li>
   <li>国外移転: 米国(Cloudflare, Inc.)</li>
+  <li>受領者の連絡先: dpo@cloudflare.com</li>
+  <li>受領者の保有期間: 中継サーバーの記録は第5条の期間が過ぎると自動削除します。契約終了時にはCloudflareのデータ処理契約に従って削除します。</li>
+  <li>拒否の方法と効果: AI解説とリアルタイム大気質を利用しなければ、このサーバーへは送信しません。その場合、この2つの機能のみ利用できません。</li>
   <li>第三者ポリシー: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
 </ul>
+
+<p><span class="highlight">(7) Expo — EAS Update(アプリのアップデート確認)</span></p>
+<ul>
+  <li>送信時点: アプリを開いた時に新しいアップデートの有無を確認</li>
+  <li>送信データ: プラットフォーム(iOS)、アプリのランタイムバージョン、現在のアップデートID、アプリのインストールごとに作成されるランダムな識別子(個人識別情報を含まない)</li>
+  <li>目的: 不具合修正などのアプリアップデートの配信</li>
+  <li>国外移転: 米国(650 Industries, Inc.・Expo)</li>
+  <li>受領者の連絡先: <a href="https://expo.dev/contact" target="_blank">https://expo.dev/contact</a></li>
+  <li>受領者の保有期間: Expoのポリシーに従い、アップデート提供に必要な期間保管します。</li>
+  <li>拒否の方法と効果: アップデート確認はアプリを開いた時に自動で行われ、止めることはできません。望まない場合はアプリの利用を止める必要があり、その場合は不具合修正のアップデートを受け取れません。</li>
+  <li>第三者ポリシー: <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a></li>
+</ul>
+
+<p>上記(1)・(2)・(4)〜(7)の委託先は、各社のデータ処理契約・利用規約に基づき、本ポリシーおよびApp Storeガイドラインが求める水準と同等以上にデータを保護します。Apple App Store((3))は決済を直接処理する別の事業者であり、Appleのプライバシーポリシーに従います。</p>
+<p>国外移転の根拠: サービス提供(契約の履行)に必要な処理の委託であり、移転する項目・国・時期と方法・受領者と連絡先・利用目的と保有期間・拒否の方法を本ポリシーで公開しています。AI解説については、これに加えて送信前に同意をいただきます。</p>
 
 <h2>5. 個人情報の保有および破棄</h2>
 <ul>
@@ -480,39 +667,52 @@
   <li>アプリ内でデータ初期化(再入力)時、既存データは新規データに置き換えられます。再入力時には、入力情報だけでなくチェックイン記録とレポートも初期化されます。</li>
   <li>決済診断用ログはデバイス内AsyncStorageに直近20件のみ保管され、新しい記録が増えると古いものから自動的に削除されます(アプリ削除時にも共に削除)。</li>
   <li>RevenueCatサーバーに保存された購読情報はRevenueCatの保有ポリシーに従います。</li>
-  <li>本アプリは独自サーバーを運営していないため、遠隔破棄の対象外です。</li>
+  <li>中継サーバー(Cloudflare Workers・D1)の使用量記録は、次の期間が経過すると自動的に削除されます: 月別のAI解説利用回数・トークン数 = 13か月 ・ 家族の解説番号 = 2か月 ・ 1日のリクエスト数 = 翌日 ・ 再入力チケットによる解説の使用累計 = サービス運営期間(購入された追加解説の使用状況を守るため)。</li>
+  <li>これらの記録には氏名・生年月日・健康情報が含まれず、アプリが作成したランダムな識別子にのみ結び付いています。運営者はこの識別子だけでは誰の記録か分かりません。記録の削除をご希望の場合は、App Storeの購入領収書メール(またはApp Storeの購入履歴)に記載された注文番号(Order ID)を下記メールアドレスへお送りください。その番号で確認できる中継サーバーの記録を、ご依頼を受けた日から10日以内に削除してご返信します。ご依頼がなくても、上記の期間が過ぎると自動的に削除されます。</li>
+  <li>破棄の方法: 中継サーバーの記録はデータベースから削除します。データベース復元用の記録(Cloudflare D1)に残った写しも最長30日で消えます。デバイス内の情報はアプリの削除または「모든 데이터 삭제」(すべてのデータを削除)で消去されます。</li>
 </ul>
 
 <h2>6. 利用者の権利</h2>
 <ul>
-  <li>ユーザーはいつでもアプリを削除することにより、すべての分析データを破棄できます。</li>
+  <li>ユーザーはいつでもアプリを削除することにより、デバイス内のすべてのデータを破棄できます。</li>
+  <li>アプリ内での削除: 設定 → 「데이터 관리」(データ管理) → 「모든 데이터 삭제」(すべてのデータを削除)。アプリの画面は韓国語です。入力情報・結果・家族・友人・バケットリスト・チェックイン・レポートなど、デバイス内のデータを削除します。</li>
+  <li>この際、購読と購入済みの権利を守るため、次の項目はデバイス内に残ります: 購読状態、決済診断ログ(直近20件)、利用統計用のランダム端末識別子、決済用のランダムなユーザーID、家族スロット・再入力チケットの残量、利用統計・エラー報告の設定。アプリを削除すると一緒に削除されます。中継サーバーの記録は第5条の期間に従って削除されます。</li>
   <li>再入力機能を通じて、既存の分析結果を新しいデータに置き換えることができます。</li>
   <li>購読の解約および返金は、Apple App Storeの購読管理ページから直接実施できます。</li>
+  <li>中継サーバーの記録の削除依頼: 第5条の方法</li>
+  <li>AI解説の送信への同意の撤回: 第4条(1)の方法</li>
+  <li>デバイス内の情報は運営者が見ることができないため、閲覧と訂正はアプリの画面で直接行えます。</li>
+  <li>その他の閲覧・訂正・削除・処理停止・同意撤回のご依頼は下記メールで受け付け(代理人によるご依頼を含む)、ご依頼を受けた日から10日以内に結果をお知らせします。結果に異議がある場合は、同じメールで異議を申し立てることができます。</li>
 </ul>
 
 <h2>7. 決済および返金案内</h2>
 <ul>
   <li>本アプリのすべてのアプリ内課金はApple App Storeを通じて処理されます。</li>
-  <li>購読解約: iOS設定 > Apple ID > 購読から直接解約可能です。</li>
+  <li>購読解約: iOS設定 > Appleアカウント(一番上の名前) > サブスクリプションから直接解約できます。</li>
   <li>返金: Appleの返金ポリシーに基づき、<a href="https://reportaproblem.apple.com" target="_blank">Apple返金申請ページ</a>から申請できます。</li>
   <li>本アプリ(Studio JS)は直接返金処理を行いません。決済関連の紛争はAppleのポリシーに従います。</li>
 </ul>
 
 <h2>8. 児童の個人情報保護</h2>
-<p>本アプリは満14歳未満の利用を制限しており、満14歳未満の児童の個人情報を意図的に収集しません。アプリの年齢制限は12+に設定されています。</p>
+<p>本アプリは満14歳以上を対象としており、初回起動時に満14歳以上であることの確認(同意)をお願いしています。満14歳未満の児童の個人情報を意図的に収集しません。アプリの年齢制限は、韓国で12+、米国・日本などその他の地域で13+に設定されています(iOS 26より前のOSでは12+)。</p>
 
 <h2>9. 個人情報保護責任者</h2>
 <ul>
-  <li>商号: Studio JS</li>
+  <li>個人情報保護責任者: seonwoo yang</li>
+  <li>ブランド: Studio JS</li>
   <li>メール: <a href="mailto:studiojeongsun@gmail.com">studiojeongsun@gmail.com</a></li>
 </ul>
 
 <h2>10. プライバシーポリシーの変更</h2>
-<p>本ポリシーが変更される場合、アプリ内のお知らせまたは本ページを通じて事前に告知します。重要な変更は施行日の7日前、その他の変更は施行日当日に告知します。</p>
+<p>本ポリシーが変更される場合、アプリ内のお知らせまたは本ページを通じて事前に告知します。重要な変更は施行日の7日前、その他の変更は施行日当日に告知します。ただし、実際の取り扱いと異なる記載を正す訂正は直ちに施行します。</p>
+<p><span class="highlight">改定履歴</span></p>
+<ul>
+  <li>2026年10月7日(訂正・即日施行): 中継サーバーが保存する使用量記録と保管期間・削除方法を記載し、「独自サーバーを運営していない」という誤った記載を削除 ・ AI解説で送信する項目(仮名化された分析結果・年齢・性別・続柄)と家族1人につき月1回の上限 ・ RevenueCat・Sentryの送信時点 ・ Expoのアップデート確認を追加 ・ アプリ内「모든 데이터 삭제」(すべてのデータを削除)と残る項目 ・ 「Appleアカウント」の名称 ・ 年齢の記載 ・ 購読終了後のデータに関する欠落していた文を追加 ・ 注文番号による中継サーバー記録の削除依頼 ・ 受領者ごとの連絡先・保有期間・拒否の方法 ・ 安全管理措置 ・ アプリが自動的に作成・送信する情報 ・ 利用目的 ・ AI解説で送信する健康関連項目 ・ 同意の撤回 ・ 権利行使の方法と期限 ・ 年齢区分 ・ 個人情報保護責任者 ・ 設定での同意の撤回と利用統計・エラー報告のオフ ・ Sentryの送信項目(位置・IPを保存しない) ・ Amplitudeの送信項目とおおよその位置 ・ 委託先による同等の保護 ・ ブランド表記</li>
+</ul>
 
 <div class="footer">
   <p>© 2026 Studio JS. All rights reserved.</p>
-  <p>最終更新日: 2026年9月16日</p>
+  <p>最終更新日: 2026年10月7日</p>
   <p><a href="support.html#ja">サポート</a></p>
 </div>
 
@@ -536,10 +736,12 @@ function switchLang(lang) {
   history.replaceState(null, '', '#' + lang);
 }
 
-// 페이지 로드 시 URL 해시로 언어 자동 선택
-window.addEventListener('DOMContentLoaded', function() {
-  const hash = window.location.hash.replace('#', '');
-  if (hash === 'en' || hash === 'ja' || hash === 'ko') {
+// 페이지 로드 · 해시 변경 시 URL 해시로 언어 자동 선택
+// ★J-39(2026-10-07): #ja · #en · #ko와 #lang-ja · #lang-en · #lang-ko를 모두 받는다(ASC에 걸린 옛 링크 #lang-ja도 바로 맞게 열린다)
+function langFromHash(h) { var l = String(h || '').replace(/^#/, '').replace(/^lang-/, ''); return (l === 'en' || l === 'ja' || l === 'ko') ? l : null; }
+function showLangFromHash() {
+  const hash = langFromHash(window.location.hash);
+  if (hash) {
     document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
     document.getElementById('lang-' + hash).classList.add('active');
@@ -550,7 +752,9 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     document.documentElement.lang = hash;
   }
-});
+}
+window.addEventListener('DOMContentLoaded', showLangFromHash);
+window.addEventListener('hashchange', showLangFromHash);
 </script>
 
 </body>
